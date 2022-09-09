@@ -1,6 +1,6 @@
 import React from "react";
-import youtubeIcon from "../../public/youtube-icon.png";
-import githubIcon from "../../public/github-icon.png";
+import youtubeIcon from "../../../public/youtube-icon.png";
+import githubIcon from "../../../public/github-icon.png";
 
 function Footer() {
   const date = new Date();
