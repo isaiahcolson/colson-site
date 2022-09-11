@@ -8,5 +8,9 @@ module.exports = {
       },
       white: "#F2F0EF",
     },
+    fontFamily: {
+      sans: ["Roboto", "ui-sans-serif", "system-ui"],
+      serif: ["PT Serif", "ui-serif", "Georgia"],
+    },
   },
 };
