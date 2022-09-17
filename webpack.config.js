@@ -1,4 +1,5 @@
 const path = require("path");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require("dotenv-webpack");
@@ -8,8 +9,8 @@ module.exports = {
   mode: "development",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: '[name].js',
-    assetModuleFilename: 'public/[name].[ext]'
+    filename: "[name].js",
+    assetModuleFilename: "public/[name].[ext]",
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".scss"],
@@ -41,17 +42,23 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
       {
-        test: /\.(png|svg)(\?[a-z0-9=.]+)?$/,
-        type: 'asset/resource'
+        test: /\.(png|jpe?g|gif)$/i,
+        type: "asset/resource",
       },
-      {
-     }
+      {},
     ],
   },
   plugins: [
     new Dotenv(),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "public",
+        },
+      ],
     }),
     new MiniCssExtractPlugin(),
   ],
