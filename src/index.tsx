@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+// import { getAnalytics } from "firebase/analytics";
 
 const {
   REACT_APP_FIREBASE_APIKEY,
@@ -26,7 +26,7 @@ const firebaseConfig = {
 
 // @ts-ignore
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 
 const container = document.getElementById("root") as HTMLElement;
 const root = createRoot(container);

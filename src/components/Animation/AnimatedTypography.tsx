@@ -7,20 +7,14 @@ function AnimatedTypography() {
     });
   }
 
-  const typeConfig = {
-    duration: 150,
-    easing: "cubic-bezier(0, 0.8, 0.6, 1)",
-    fill: "forwards",
-  };
-
   const typeDownMovement = [
-    { transform: "translateY(0)", opacity: 1, filter: "blur(0.25px)" },
+    { transform: "translateY(0)", opacity: 1, filter: "blur(0)" },
     { transform: "translateY(150%)", opacity: 0, filter: "blur(2px)" },
   ];
 
   const typeUpMovement = [
     { transform: "translateY(150%)", opacity: 0, filter: "blur(2px)" },
-    { transform: "translateY(0)", opacity: 1, filter: "blur(0.5px)" },
+    { transform: "translateY(0)", opacity: 1, filter: "blur(0)" },
   ];
 
   function typeAnim(element: string, direction: string) {
