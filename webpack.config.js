@@ -3,11 +3,16 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require("dotenv-webpack");
 
+const NODE_ENV = process.env.NODE_ENV;
+const PUBLIC_PATH =
+  NODE_ENV === 'local' ? 'http://localhost:' + HMR_PORT + '/' : '/app/dist';
+
 module.exports = {
   entry: path.join(__dirname, "src", "index.tsx"),
   mode: "development",
   output: {
     path: path.resolve(__dirname, "dist"),
+    publicPath: PUBLIC_PATH,
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".scss"],
