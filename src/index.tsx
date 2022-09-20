@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
 import { initializeApp } from "firebase/app";
+import { BrowserRouter } from "react-router-dom";
 // import { getAnalytics } from "firebase/analytics";
 
 const {
@@ -30,4 +31,8 @@ const app = initializeApp(firebaseConfig);
 
 const container = document.getElementById("root") as HTMLElement;
 const root = createRoot(container);
-root.render(<App />);
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
