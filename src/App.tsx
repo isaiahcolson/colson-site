@@ -8,15 +8,17 @@ import "./scss/index.scss";
 
 function App() {
   return (
-    <div className="h-full min-h-screen flex flex-col max-w-7xl my-0 mx-auto text-white">
+    <div className="h-full min-h-screen flex flex-col max-w-7xl my-0 mx-auto text-black">
       <div className="px-6 md:px-8">
         <NavBar />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="articles" element={<Articles />} />
-          <Route path="articles/:id" element={<Article />} />
-        </Routes>
+        <div className="mb-auto h-[calc(100vh-132px)] md:h-[calc(100vh-160px)]">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="articles" element={<Articles />} />
+            <Route path="articles/:id" element={<Article />} />
+          </Routes>
+        </div>
 
         <Footer />
       </div>

@@ -10,7 +10,7 @@ function NavBar() {
       </Link>
 
       <Link
-        className="text-white text-lg md:text-xl hover:underline leading-[1rem]"
+        className="text-lg md:text-xl hover:underline leading-[1rem]"
         to="/articles"
       >
         Articles
