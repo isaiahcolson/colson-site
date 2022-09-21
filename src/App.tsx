@@ -12,13 +12,11 @@ function App() {
       <div className="px-6 md:px-8">
         <NavBar />
 
-        <div className="mb-auto h-[calc(100vh-132px)] md:h-[calc(100vh-160px)]">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="articles" element={<Articles />} />
-            <Route path="articles/:id" element={<Article />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="articles" element={<Articles />} />
+          <Route path="articles/:id" element={<Article />} />
+        </Routes>
 
         <Footer />
       </div>

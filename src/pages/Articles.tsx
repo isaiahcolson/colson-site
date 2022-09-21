@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 function Articles() {
   return (
-    <div className="py-12 md:py-16 max-w-xl mx-auto">
+    <div className="py-12 md:py-16 max-w-[590px] mx-auto">
       <div className="pb-8">
         <div className="pb-12 md:text-center md:pb-16">
-          <h2 className="text-4xl md:text-5xl font-black">Articles</h2>
+          <h1 className="pb-1">Articles</h1>
 
           <p className="md:text-xl">Read my crap.</p>
         </div>

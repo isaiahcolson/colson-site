@@ -1,3 +1,29 @@
 body {
   background-color: $white;
 }
+
+h1 {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.25;
+
+  @media screen and (min-width: 768px) {
+    font-size: 48px;
+  }
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
+}
+
+hr {
+  opacity: 0.25;
+  border-radius: 9999px;
+  border-top: 1px solid $black;
+}
