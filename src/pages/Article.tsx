@@ -14,10 +14,17 @@ function Article() {
       <div className="pb-8 md:pb-12">
         <p className="font-serif text-lg pb-8 md:text-xl">
           How many times have you tried to add a new piece of styling that
-          required adding a z-index property and you found that there is no
-          organization for the z-axis of your website? Maybe you have some
-          elements with a z-index value of 9999 or other elements that appear
-          randomly in the 100-200 range.
+          required adding a{" "}
+          <kbd className="rounded-sm text-code-inline bg-[#878378]/[0.15] p-1 text-sm md:text-base">
+            z-index
+          </kbd>{" "}
+          property and you found that there is no organization for the z-axis of
+          your website? Maybe you have some elements with a{" "}
+          <kbd className="rounded-sm text-code-inline bg-[#878378]/[0.15] p-1 text-sm md:text-base">
+            z-index
+          </kbd>{" "}
+          value of 9999 or other elements that appear randomly in the 100-200
+          range.
         </p>
 
         <p className="font-serif text-lg pb-8 md:text-xl">
@@ -26,11 +33,21 @@ function Article() {
         </p>
 
         <p className="font-serif text-lg pb-8 md:text-xl">
-          I picked up a bug ticket to fix the z-index of a help icon that we had
-          floating in the bottom right corner and I just bumped up the z-index
+          I picked up a bug ticket to fix the{" "}
+          <kbd className="rounded-sm text-code-inline bg-[#878378]/[0.15] p-1 text-sm md:text-base">
+            z-index
+          </kbd>{" "}
+          of a help icon that we had floating in the bottom right corner and I
+          just bumped up the{" "}
+          <kbd className="rounded-sm text-code-inline bg-[#878378]/[0.15] p-1 text-sm md:text-base">
+            z-index
+          </kbd>{" "}
           until it fit right where it needed to. When a peer of mine reviewed my
-          code, they challenged me to find a better way for us to use z-index.
-          Here is a solution we found using Sass.
+          code, they challenged me to find a better way for us to use{" "}
+          <kbd className="rounded-sm text-code-inline bg-[#878378]/[0.15] p-1 text-sm md:text-base">
+            z-index
+          </kbd>{" "}
+          . Here is a solution we found using Sass.
         </p>
       </div>
 
@@ -38,12 +55,16 @@ function Article() {
         <h2 className="pb-6 md:pb-8">Create a Z-Index Map for All Values</h2>
 
         <p className="font-serif text-lg pb-8 md:text-xl">
-          There are different layers to the z-index, so we began by creating a
-          map of all of the basic levels. We added this to a file that holds all
-          of our global variables, it looks a little like this:
+          There are different layers to the{" "}
+          <kbd className="rounded-sm text-code-inline bg-[#878378]/[0.15] p-1 text-sm md:text-base">
+            z-index
+          </kbd>{" "}
+          , so we began by creating a map of all of the basic levels. We added
+          this to a file that holds all of our global variables, it looks a
+          little like this:
         </p>
 
-        <code className="text-lg p-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block">
+        <code className="py-4 px-5 md:py-5 md:px-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block text-base md:text-lg">
           <div className="text-code-comment italic">// Z-Index Map</div>
 
           <div>
@@ -107,11 +128,14 @@ function Article() {
         </p>
 
         <p className="font-serif text-lg pb-8 md:text-xl">
-          We could stop here and just assign every object that requires a
-          z-index property to a key-value pair in our map like so:
+          We could stop here and just assign every object that requires a{" "}
+          <kbd className="rounded-sm text-code-inline bg-[#878378]/[0.15] p-1 text-sm md:text-base">
+            z-index
+          </kbd>{" "}
+          property to a key-value pair in our map like so:
         </p>
 
-        <code className="text-lg p-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block">
+        <code className="py-4 px-5 md:py-5 md:px-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block text-base md:text-lg">
           <div>
             <span className="text-code-string">.someClass</span>
             <span className="text-code-punctuation">{" {"}</span>
@@ -155,7 +179,7 @@ function Article() {
           optional addend if one was needed.
         </p>
 
-        <code className="text-lg p-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block">
+        <code className="py-4 px-5 md:py-5 md:px-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block text-base md:text-lg">
           <div className="flex flex-wrap">
             <span className="text-code-keyword">@function</span>
             <span className="w-2"></span>
@@ -223,20 +247,26 @@ function Article() {
         </p>
 
         <p className="font-serif text-lg pb-8 md:text-xl">
-          We've now changed our thought process of z-index to not be focused on
-          numbers but keys instead. The keys represent the layers of our
-          application and this helps us to get a better visualization of our
-          site.
+          We've now changed our thought process of{" "}
+          <kbd className="rounded-sm text-code-inline bg-[#878378]/[0.15] p-1 text-sm md:text-base">
+            z-index
+          </kbd>{" "}
+          to not be focused on numbers but keys instead. The keys represent the
+          layers of our application and this helps us to get a better
+          visualization of our site.
         </p>
 
         <p className="font-serif text-lg pb-8 md:text-xl">
-          If we use our map from earlier and pass “navigation” as the key, then
-          the returned value will be 10. If we decide that a drop-down needs to
-          go right above the navigation, we can pass in 1 as the second argument
-          and the returned value will now be 11.
+          If we use our map from earlier and pass{" "}
+          <kbd className="rounded-sm text-code-inline bg-[#878378]/[0.15] p-1 text-sm md:text-base">
+            navigation
+          </kbd>{" "}
+          as the key, then the returned value will be 10. If we decide that a
+          drop-down needs to go right above the navigation, we can pass in 1 as
+          the second argument and the returned value will now be 11.
         </p>
 
-        <code className="text-lg p-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block">
+        <code className="py-4 px-5 md:py-5 md:px-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block text-base md:text-lg">
           <div className="text-code-comment italic">// Navigation Bar</div>
 
           <div>
@@ -290,7 +320,7 @@ function Article() {
           navigation bar.
         </p>
 
-        <code className="text-lg p-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block">
+        <code className="py-4 px-5 md:py-5 md:px-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block text-base md:text-lg">
           <div className="text-code-comment italic">// Original Value</div>
 
           <div>
@@ -377,7 +407,7 @@ function Article() {
           the returned value will now be 9.
         </p>
 
-        <code className="text-lg p-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block">
+        <code className="py-4 px-5 md:py-5 md:px-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block text-base md:text-lg">
           <div className="text-code-comment italic">// Navigation Bar</div>
 
           <div>
@@ -443,7 +473,7 @@ function Article() {
           along the z-axis.
         </p>
 
-        <code className="text-lg p-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block">
+        <code className="py-4 px-5 md:py-5 md:px-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block text-base md:text-lg">
           <div className="text-code-comment italic">
             // Z-Index Map Original
           </div>
@@ -571,9 +601,13 @@ function Article() {
 
         <p className="font-serif text-lg pb-8 md:text-xl">
           We've not only easily added a new value with a one-line change, but
-          we've also updated every other z-index property that appears higher
-          than the newly added key-value pair. All areas that use this map,
-          directly or through the function, will now automatically be updated.
+          we've also updated every other{" "}
+          <kbd className="rounded-sm text-code-inline bg-[#878378]/[0.15] p-1 text-sm md:text-base">
+            z-index
+          </kbd>{" "}
+          property that appears higher than the newly added key-value pair. All
+          areas that use this map, directly or through the function, will now
+          automatically be updated.
         </p>
       </div>
     </div>

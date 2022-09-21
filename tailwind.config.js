@@ -9,6 +9,7 @@ module.exports = {
       code: {
         comment: "#708090",
         function: "#DD4A68",
+        inline: "#EB5757",
         keyword: "#0077AA",
         number: "#990055",
         operator: "#9A6E3A",
