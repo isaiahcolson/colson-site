@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Articles() {
   return (
@@ -10,12 +11,12 @@ function Articles() {
           <p className="md:text-xl">Read my crap.</p>
         </div>
 
-        <div>
+        <Link to="/articles/001">
           <p className="text-sm text-gray-50 md:text-base">
             September 22, 2022
           </p>
 
-          <p className="font-bold py-2 md:text-xl">
+          <p className="font-bold py-2 md:text-xl overflow-hidden text-ellipsis whitespace-nowrap">
             How to Organize Your Z-Index Using Sass
           </p>
 
@@ -26,7 +27,7 @@ function Articles() {
             elements with a z-index value of 9999 or other elements that appear
             randomly in the 100-200 range.
           </p>
-        </div>
+        </Link>
       </div>
     </div>
   );

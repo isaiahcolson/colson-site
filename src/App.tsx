@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Articles, Home } from "./pages";
+import { Article, Articles, Home } from "./pages";
 import { Footer } from "./components/Footer";
 import { NavBar } from "./components/NavBar";
 import "./index.css";
@@ -15,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="articles" element={<Articles />} />
+          <Route path="articles/:id" element={<Article />} />
         </Routes>
 
         <Footer />
