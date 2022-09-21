@@ -43,7 +43,60 @@ function Article() {
           of our global variables, it looks a little like this:
         </p>
 
-        {/* <div className="italic">insert code block here</div> */}
+        <code className="text-lg p-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block">
+          <div className="text-code-comment italic">// Z-Index Map</div>
+
+          <div>
+            <span className="text-code-variable">$zindex</span>
+            <span className="text-code-punctuation">: (</span>
+          </div>
+
+          <div className="relative left-4">
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'base'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">0</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'navigation'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">10</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'alert'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">20</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'modal'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">30</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'topLevel'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">40</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+          </div>
+
+          <div>
+            <span className="text-code-punctuation">);</span>
+          </div>
+        </code>
 
         <p className="font-serif text-lg pb-8 md:text-xl">
           You'll notice that all layers have an increment of 10, this is a
@@ -58,7 +111,35 @@ function Article() {
           z-index property to a key-value pair in our map like so:
         </p>
 
-        {/* <div className="italic">insert code block here</div> */}
+        <code className="text-lg p-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block">
+          <div>
+            <span className="text-code-string">.someClass</span>
+            <span className="text-code-punctuation">{" {"}</span>
+          </div>
+
+          <div className="flex flex-wrap relative left-4">
+            <span className="text-code-number">z-index</span>
+            <span className="text-code-punctuation">:</span>
+            <span className="w-2"></span>
+            <span className="text-code-function">map-get</span>
+            <span className="text-code-punctuation">(</span>
+            <span className="text-code-variable">$map</span>
+            <span className="text-code-punctuation">:</span>
+            <span className="w-2"></span>
+            <span className="text-code-variable">$zindex</span>
+            <span className="text-code-punctuation">,</span>
+            <span className="w-2"></span>
+            <span className="text-code-variable">$key</span>
+            <span className="text-code-punctuation">:</span>
+            <span className="w-2"></span>
+            <span className="text-code-unknown">navigation</span>
+            <span className="text-code-punctuation">);</span>
+          </div>
+
+          <div>
+            <span className="text-code-punctuation">{"}"}</span>
+          </div>
+        </code>
 
         <p className="font-serif text-lg pb-8 md:text-xl">
           We challenged ourselves to look for ways this could be reusable,
@@ -74,7 +155,62 @@ function Article() {
           optional addend if one was needed.
         </p>
 
-        {/* <div className="italic">insert code block here</div> */}
+        <code className="text-lg p-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block">
+          <div className="flex flex-wrap">
+            <span className="text-code-keyword">@function</span>
+            <span className="w-2"></span>
+            <span className="text-code-function">zindex</span>
+            <span className="text-code-punctuation">(</span>
+            <span className="text-code-variable">$key</span>
+            <span className="text-code-punctuation">,</span>
+            <span className="w-2"></span>
+            <span className="text-code-variable">$addend</span>
+            <span className="text-code-punctuation">:</span>
+            <span className="w-2"></span>
+            <span className="text-code-number">0</span>
+            <span className="text-code-punctuation">{") {"}</span>
+          </div>
+
+          <div className="relative left-4">
+            <div className="flex flex-wrap">
+              <span className="text-code-variable">$value</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-function">map-get</span>
+              <span className="text-code-punctuation">(</span>
+              <span className="text-code-variable">$zindex</span>
+              <span className="text-code-punctuation">,</span>
+              <span className="w-2"></span>
+              <span className="text-code-variable">$key</span>
+              <span className="text-code-punctuation">);</span>
+            </div>
+
+            <div className="flex flex-wrap">
+              <span className="text-code-variable">$new-value</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-variable">$value</span>
+              <span className="w-2"></span>
+              <span className="text-code-operator">+</span>
+              <span className="w-2"></span>
+              <span className="text-code-variable">$addend</span>
+              <span className="text-code-punctuation">;</span>
+            </div>
+
+            <br />
+
+            <div className="flex flex-wrap">
+              <span className="text-code-keyword">@return</span>
+              <span className="w-2"></span>
+              <span className="text-code-variable">$new-value</span>
+              <span className="text-code-punctuation">;</span>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap">
+            <span className="text-code-punctuation">{"}"}</span>
+          </div>
+        </code>
 
         <p className="font-serif text-lg pb-8 md:text-xl">
           What does this mean?
@@ -100,14 +236,135 @@ function Article() {
           and the returned value will now be 11.
         </p>
 
-        {/* <div className="italic">insert code block here</div> */}
+        <code className="text-lg p-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block">
+          <div className="text-code-comment italic">// Navigation Bar</div>
+
+          <div>
+            <span className="text-code-selector">.navigation</span>
+            <span className="text-code-punctuation">{" {"}</span>
+          </div>
+
+          <div className="flex flex-wrap relative left-4">
+            <span className="text-code-property">z-index</span>
+            <span className="text-code-punctuation">:</span>
+            <span className="w-2"></span>
+            <span className="text-code-function">zindex</span>
+            <span className="text-code-punctuation">(</span>
+            <span className="text-code-unknown">navigation</span>
+            <span className="text-code-punctuation">);</span>
+          </div>
+
+          <div>
+            <span className="text-code-punctuation">{"}"}</span>
+          </div>
+
+          <br />
+
+          <div className="text-code-comment italic">// Drop Down</div>
+
+          <div>
+            <span className="text-code-selector">.navigation-dropdown</span>
+            <span className="text-code-punctuation">{" {"}</span>
+          </div>
+
+          <div className="flex flex-wrap relative left-4">
+            <span className="text-code-property">z-index</span>
+            <span className="text-code-punctuation">:</span>
+            <span className="w-2"></span>
+            <span className="text-code-function">zindex</span>
+            <span className="text-code-punctuation">(</span>
+            <span className="text-code-unknown">navigation</span>
+            <span className="text-code-punctuation">,</span>
+            <span className="w-2"></span>
+            <span className="text-code-number">1</span>
+            <span className="text-code-punctuation">);</span>
+          </div>
+
+          <div>
+            <span className="text-code-punctuation">{"}"}</span>
+          </div>
+        </code>
 
         <p className="font-serif text-lg pb-8 md:text-xl">
           Here is what our code progression has looked like for something like a
           navigation bar.
         </p>
 
-        {/* <div className="italic">insert code block here</div> */}
+        <code className="text-lg p-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block">
+          <div className="text-code-comment italic">// Original Value</div>
+
+          <div>
+            <span className="text-code-selector">.navigation</span>
+            <span className="text-code-punctuation">{" {"}</span>
+          </div>
+
+          <div className="flex flex-wrap relative left-4">
+            <span className="text-code-property">z-index</span>
+            <span className="text-code-punctuation">:</span>
+            <span className="w-2"></span>
+            <span className="text-code-number">49</span>
+            <span className="text-code-punctuation">;</span>
+          </div>
+
+          <div>
+            <span className="text-code-punctuation">{"}"}</span>
+          </div>
+
+          <br />
+
+          <div className="text-code-comment italic">// Using Map</div>
+
+          <div>
+            <span className="text-code-selector">.navigation</span>
+            <span className="text-code-punctuation">{" {"}</span>
+          </div>
+
+          <div className="flex flex-wrap relative left-4">
+            <span className="text-code-property">z-index</span>
+            <span className="text-code-punctuation">:</span>
+            <span className="w-2"></span>
+            <span className="text-code-function">map-get</span>
+            <span className="text-code-punctuation">(</span>
+            <span className="text-code-variable">$map</span>
+            <span className="text-code-punctuation">:</span>
+            <span className="w-2"></span>
+            <span className="text-code-variable">$zindex</span>
+            <span className="text-code-punctuation">,</span>
+            <span className="w-2"></span>
+            <span className="text-code-variable">$key</span>
+            <span className="text-code-punctuation">:</span>
+            <span className="w-2"></span>
+            <span className="text-code-unknown">navigation</span>
+            <span className="text-code-punctuation">);</span>
+          </div>
+
+          <div>
+            <span className="text-code-punctuation">{"}"}</span>
+          </div>
+
+          <br />
+
+          <div className="text-code-comment italic">// Using Function</div>
+
+          <div>
+            <span className="text-code-selector">.navigation</span>
+            <span className="text-code-punctuation">{" {"}</span>
+          </div>
+
+          <div className="flex flex-wrap relative left-4">
+            <span className="text-code-property">z-index</span>
+            <span className="text-code-punctuation">:</span>
+            <span className="w-2"></span>
+            <span className="text-code-function">zindex</span>
+            <span className="text-code-punctuation">(</span>
+            <span className="text-code-unknown">navigation</span>
+            <span className="text-code-punctuation">);</span>
+          </div>
+
+          <div>
+            <span className="text-code-punctuation">{"}"}</span>
+          </div>
+        </code>
 
         <p className="font-serif text-lg pb-8 md:text-xl">
           This also works if you need to drop an element below the desired
@@ -120,7 +377,56 @@ function Article() {
           the returned value will now be 9.
         </p>
 
-        {/* <div className="italic">insert code block here</div> */}
+        <code className="text-lg p-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block">
+          <div className="text-code-comment italic">// Navigation Bar</div>
+
+          <div>
+            <span className="text-code-selector">.navigation</span>
+            <span className="text-code-punctuation">{" {"}</span>
+          </div>
+
+          <div className="flex flex-wrap relative left-4">
+            <span className="text-code-property">z-index</span>
+            <span className="text-code-punctuation">:</span>
+            <span className="w-2"></span>
+            <span className="text-code-function">zindex</span>
+            <span className="text-code-punctuation">(</span>
+            <span className="text-code-unknown">navigation</span>
+            <span className="text-code-punctuation">);</span>
+          </div>
+
+          <div>
+            <span className="text-code-punctuation">{"}"}</span>
+          </div>
+
+          <br />
+
+          <div className="text-code-comment italic">
+            // Transparent Background
+          </div>
+
+          <div>
+            <span className="text-code-selector">.navigation-background</span>
+            <span className="text-code-punctuation">{" {"}</span>
+          </div>
+
+          <div className="flex flex-wrap relative left-4">
+            <span className="text-code-property">z-index</span>
+            <span className="text-code-punctuation">:</span>
+            <span className="w-2"></span>
+            <span className="text-code-function">zindex</span>
+            <span className="text-code-punctuation">(</span>
+            <span className="text-code-unknown">navigation</span>
+            <span className="text-code-punctuation">,</span>
+            <span className="w-2"></span>
+            <span className="text-code-number">-1</span>
+            <span className="text-code-punctuation">);</span>
+          </div>
+
+          <div>
+            <span className="text-code-punctuation">{"}"}</span>
+          </div>
+        </code>
       </div>
 
       <div className="pb-8 md:pb-12">
@@ -137,7 +443,131 @@ function Article() {
           along the z-axis.
         </p>
 
-        {/* <div className="italic">insert code block here</div> */}
+        <code className="text-lg p-6 mb-8 md:mb-8 rounded-lg bg-[#f7f6f3] block">
+          <div className="text-code-comment italic">
+            // Z-Index Map Original
+          </div>
+
+          <div>
+            <span className="text-code-variable">$zindex</span>
+            <span className="text-code-punctuation">: (</span>
+          </div>
+
+          <div className="relative left-4">
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'base'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">0</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'navigation'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">10</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'alert'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">20</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'modal'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">30</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'topLevel'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">40</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+          </div>
+
+          <div>
+            <span className="text-code-punctuation">);</span>
+          </div>
+
+          <br />
+
+          <div className="text-code-comment italic">
+            // Z-Index Map w/ Help Location
+          </div>
+
+          <div>
+            <span className="text-code-variable">$zindex</span>
+            <span className="text-code-punctuation">: (</span>
+          </div>
+
+          <div className="relative left-4">
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'base'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">0</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'navigation'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">10</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+
+            <div className="text-code-comment italic">
+              // add help below and adjust the values that follow
+            </div>
+
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'help'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">20</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'alert'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">30</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'modal'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">40</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+
+            <div className="flex flex-wrap">
+              <span className="text-code-string">'topLevel'</span>
+              <span className="text-code-punctuation">:</span>
+              <span className="w-2"></span>
+              <span className="text-code-number">50</span>
+              <span className="text-code-punctuation">,</span>
+            </div>
+          </div>
+
+          <div>
+            <span className="text-code-punctuation">);</span>
+          </div>
+        </code>
 
         <p className="font-serif text-lg pb-8 md:text-xl">
           We've not only easily added a new value with a one-line change, but
