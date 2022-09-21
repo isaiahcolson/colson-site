@@ -7,7 +7,7 @@ function Footer() {
   const year = date.getFullYear();
 
   return (
-    <div className="flex py-4 px-4 items-center justify-between">
+    <div className="flex py-4 -m-2 items-center justify-between">
       <p className="text-gray-50 text-xs p-2 md:text-sm">
         &copy; {year} Isaiah Colson
       </p>
