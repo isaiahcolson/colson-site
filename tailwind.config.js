@@ -6,6 +6,20 @@ module.exports = {
       gray: {
         50: "#808080",
       },
+      code: {
+        comment: "#708090",
+        function: "#DD4A68",
+        inline: "#EB5757",
+        keyword: "#0077AA",
+        number: "#990055",
+        operator: "#9A6E3A",
+        property: "#990055",
+        punctuation: "#999999",
+        selector: "#669900",
+        string: "#669900",
+        unknown: "#37352F",
+        variable: "#EE9900",
+      },
       white: "#F2F0EF",
     },
     fontFamily: {

@@ -11,6 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
     assetModuleFilename: "public/[name].[ext]",
+    publicPath: "/",
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".scss"],
@@ -62,4 +63,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };

@@ -1,5 +1,6 @@
 import React from "react";
-import { AnimatedTypography } from "./components/Animation";
+import { Route, Routes } from "react-router-dom";
+import { Article, Articles, Home } from "./pages";
 import { Footer } from "./components/Footer";
 import { NavBar } from "./components/NavBar";
 import "./index.css";
@@ -8,17 +9,17 @@ import "./scss/index.scss";
 function App() {
   return (
     <div className="h-full min-h-screen flex flex-col max-w-7xl my-0 mx-auto">
-      <NavBar />
+      <div className="px-6 md:px-8">
+        <NavBar />
 
-      <div className="mb-auto flex flex-col justify-center items-center h-[calc(100vh-132px)] md:h-[calc(100vh-160px)]">
-        <p className="text-white text-base font-serif md:text-xl">
-          Isaiah Colson
-        </p>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="articles" element={<Articles />} />
+          <Route path="articles/:id" element={<Article />} />
+        </Routes>
 
-        <AnimatedTypography />
+        <Footer />
       </div>
-
-      <Footer />
     </div>
   );
 }

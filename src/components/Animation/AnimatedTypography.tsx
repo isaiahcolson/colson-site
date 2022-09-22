@@ -60,25 +60,25 @@ function AnimatedTypography() {
   return (
     <div className="w-full flex justify-center">
       <p
-        className="text-white text-4xl font-bold md:text-5xl absolute opacity-0"
+        className="text-4xl font-bold md:text-5xl absolute opacity-0"
         id="title1"
       >
         Software Engineer
       </p>
       <p
-        className="text-white text-4xl font-bold md:text-5xl absolute opacity-0"
+        className="text-4xl font-bold md:text-5xl absolute opacity-0"
         id="title2"
       >
         Animator
       </p>
       <p
-        className="text-white text-4xl font-bold md:text-5xl absolute opacity-0"
+        className="text-4xl font-bold md:text-5xl absolute opacity-0"
         id="title3"
       >
         Entrepreneur
       </p>
       <p
-        className="text-white text-4xl font-bold md:text-5xl absolute opacity-0"
+        className="text-4xl font-bold md:text-5xl absolute opacity-0"
         id="title4"
       >
         Motion Designer
