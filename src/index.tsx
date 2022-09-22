@@ -3,31 +3,21 @@ import { createRoot } from "react-dom/client";
 import { App } from "./App";
 import { initializeApp } from "firebase/app";
 import { BrowserRouter } from "react-router-dom";
-// import { getAnalytics } from "firebase/analytics";
-
-const {
-  REACT_APP_FIREBASE_APIKEY,
-  REACT_APP_FIREBASE_AUTHDOMAIN,
-  REACT_APP_FIREBASE_PROJECTID,
-  REACT_APP_FIREBASE_STORAGEBUCKET,
-  REACT_APP_FIREBASE_MESSAGINGSENDERID,
-  REACT_APP_FIREBASE_APPID,
-  REACT_APP_FIREBASE_MEASUREMENTID,
-} = process.env;
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: { REACT_APP_FIREBASE_APIKEY },
-  authDomain: { REACT_APP_FIREBASE_AUTHDOMAIN },
-  projectId: { REACT_APP_FIREBASE_PROJECTID },
-  storageBucket: { REACT_APP_FIREBASE_STORAGEBUCKET },
-  messagingSenderId: { REACT_APP_FIREBASE_MESSAGINGSENDERID },
-  appId: { REACT_APP_FIREBASE_APPID },
-  measurementId: { REACT_APP_FIREBASE_MEASUREMENTID },
+  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_FIREBASE_APPID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID,
 };
 
 // @ts-ignore
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+const analytics = getAnalytics(app);
 
 const container = document.getElementById("root") as HTMLElement;
 const root = createRoot(container);
