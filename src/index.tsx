@@ -16,7 +16,7 @@ const {
 } = process.env;
 
 const firebaseConfig = {
-  apiKey: REACT_APP_FIREBASE_APIKEY,
+  apiKey: { REACT_APP_FIREBASE_APIKEY },
   authDomain: { REACT_APP_FIREBASE_AUTHDOMAIN },
   projectId: { REACT_APP_FIREBASE_PROJECTID },
   storageBucket: { REACT_APP_FIREBASE_STORAGEBUCKET },
