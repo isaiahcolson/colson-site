@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function AnimatedTypography() {
   async function delay(duration: number) {
@@ -36,26 +36,43 @@ function AnimatedTypography() {
     return anim.play();
   }
 
-  (async () => {
-    while (true) {
-      await delay(200);
-      typeAnim("title1", "up");
-      await delay(2000);
-      typeAnim("title1", "down");
-      await delay(200);
-      typeAnim("title2", "up");
-      await delay(2000);
-      typeAnim("title2", "down");
-      await delay(200);
-      typeAnim("title3", "up");
-      await delay(2000);
-      typeAnim("title3", "down");
-      await delay(200);
-      typeAnim("title4", "up");
-      await delay(2000);
-      typeAnim("title4", "down");
+  useEffect(() => {
+    let show = true;
+
+    function clearAnimations() {
+      show = false;
     }
-  })();
+
+    async function loopAnimations() {
+      while (show) {
+        if (!show) break;
+        await delay(200);
+        typeAnim("title1", "up");
+        await delay(2000);
+        typeAnim("title1", "down");
+        if (!show) break;
+        await delay(200);
+        typeAnim("title2", "up");
+        await delay(2000);
+        if (!show) break;
+        typeAnim("title2", "down");
+        await delay(200);
+        typeAnim("title3", "up");
+        await delay(2000);
+        if (!show) break;
+        typeAnim("title3", "down");
+        await delay(200);
+        typeAnim("title4", "up");
+        await delay(2000);
+        if (!show) break;
+        typeAnim("title4", "down");
+      }
+    }
+
+    loopAnimations();
+
+    return clearAnimations;
+  }, []);
 
   return (
     <div className="w-full flex justify-center">
