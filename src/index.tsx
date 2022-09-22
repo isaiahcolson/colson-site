@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { getAnalytics } from "firebase/analytics";
 
 const {
+  REACT_APP_FIREBASE_APIKEY,
   REACT_APP_FIREBASE_AUTHDOMAIN,
   REACT_APP_FIREBASE_PROJECTID,
   REACT_APP_FIREBASE_STORAGEBUCKET,
@@ -15,7 +16,7 @@ const {
 } = process.env;
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+  apiKey: REACT_APP_FIREBASE_APIKEY,
   authDomain: { REACT_APP_FIREBASE_AUTHDOMAIN },
   projectId: { REACT_APP_FIREBASE_PROJECTID },
   storageBucket: { REACT_APP_FIREBASE_STORAGEBUCKET },
