@@ -5,24 +5,14 @@ import { initializeApp } from "firebase/app";
 import { BrowserRouter } from "react-router-dom";
 import { getAnalytics } from "firebase/analytics";
 
-const {
-  REACT_APP_FIREBASE_APIKEY,
-  REACT_APP_FIREBASE_AUTHDOMAIN,
-  REACT_APP_FIREBASE_PROJECTID,
-  REACT_APP_FIREBASE_STORAGEBUCKET,
-  REACT_APP_FIREBASE_MESSAGINGSENDERID,
-  REACT_APP_FIREBASE_APPID,
-  REACT_APP_FIREBASE_MEASUREMENTID,
-} = process.env;
-
 const firebaseConfig = {
-  apiKey: { REACT_APP_FIREBASE_APIKEY },
-  authDomain: { REACT_APP_FIREBASE_AUTHDOMAIN },
-  projectId: { REACT_APP_FIREBASE_PROJECTID },
-  storageBucket: { REACT_APP_FIREBASE_STORAGEBUCKET },
-  messagingSenderId: { REACT_APP_FIREBASE_MESSAGINGSENDERID },
-  appId: { REACT_APP_FIREBASE_APPID },
-  measurementId: { REACT_APP_FIREBASE_MEASUREMENTID },
+  apiKey: "AIzaSyAzuxugr1oTF6v2quypKbsRevV3tPMCTkc",
+  authDomain: "colson-site.firebaseapp.com",
+  projectId: "colson-site",
+  storageBucket: "colson-site.appspot.com",
+  messagingSenderId: "250577896892",
+  appId: "1:250577896892:web:c77bd5d99273b2989157b9",
+  measurementId: "G-WM678XZMPG",
 };
 
 // @ts-ignore
