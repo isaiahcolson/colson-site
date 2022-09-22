@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 
 function Articles() {
   return (
-    <div className="py-12 md:py-16 max-w-[590px] mx-auto">
+    <div className="py-12 md:py-16 max-w-[590px] mx-auto h-[calc(100vh-132px)] md:h-[calc(100vh-160px)]">
       <div className="pb-8">
         <div className="pb-12 md:text-center md:pb-16">
           <h1 className="pb-1">Articles</h1>
 
-          <p className="md:text-xl">Read my crap.</p>
+          <p className="md:text-xl">
+            Thoughts, experiments, fun stuff learned.
+          </p>
         </div>
 
         <Link to="/articles/001">
