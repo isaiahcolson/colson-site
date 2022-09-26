@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Article, Articles, Home } from "./pages";
 import { Footer } from "./components/Footer";
