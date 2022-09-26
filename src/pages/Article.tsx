@@ -2,7 +2,7 @@ import React from "react";
 
 function Article() {
   return (
-    <div className="max-w-[590px] my-0 mx-auto">
+    <article className="max-w-[590px] my-0 mx-auto">
       <h1 className="pt-12 md:pt-16 pb-2 md:pb-8">
         How to Organize Your Z-Index Using Sass
       </h1>
@@ -610,7 +610,7 @@ function Article() {
           automatically be updated.
         </p>
       </div>
-    </div>
+    </article>
   );
 }
 

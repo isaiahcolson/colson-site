@@ -5,7 +5,7 @@ import { ICLogo } from "../Icons";
 function NavBar() {
   return (
     <div className="py-5 md:py-6 flex justify-between items-center">
-      <Link to="/">
+      <Link aria-label="Home" to="/">
         <ICLogo className="w-auto h-6 md:h-8" />
       </Link>
 
