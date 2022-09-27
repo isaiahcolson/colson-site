@@ -1,0 +1,181 @@
+import {
+  ArticleHeader,
+  ArticleParagraph,
+  ArticleParagraphContainer,
+  ArticleSubHeader,
+  CodeBlock,
+} from "../components/Article";
+
+<ArticleHeader>How to Organize Your Z-Index Using Sass</ArticleHeader>
+
+<ArticleParagraphContainer>
+<ArticleParagraph>
+How many times have you tried to add a new piece of styling that required adding a `z-index` property and you found that there is no organization for the z-axis of your website? Maybe you have some elements with a `z-index` value of 9999 or other elements that appear randomly in the 100-200 range.
+
+I never found it an issue for myself until I started working on a team with 20+ other developers working in the same codebase.
+
+I picked up a bug ticket to fix the `z-index` of a help icon that we had floating in the bottom right corner and I just bumped up the `z-index` until it fit right where it needed to. When a peer of mine reviewed my code, they challenged me to find a better way for us to use `z-index`. Here is a solution we found using Sass.
+
+</ArticleParagraph>
+</ArticleParagraphContainer>
+
+<ArticleParagraphContainer>
+<ArticleSubHeader>Create a Z-Index Map for All Values</ArticleSubHeader>
+
+<ArticleParagraph>
+  There are different layers to the `z-index`, so we began by creating a map of
+  all of the basic levels. We added this to a file that holds all of our global
+  variables, it looks a little like this:
+</ArticleParagraph>
+
+<CodeBlock language="scss">{`// Z-Index Maps
+$zindex: (
+  'base': 0,
+  'navigation': 10,
+  'alert': 20,
+  'modal': 30,
+  'topLevel': 40,
+);`}</CodeBlock>
+
+<ArticleParagraph>
+You'll notice that all layers have an increment of 10, this is a personal preference. We considered incrementing by 100 but found that we didn't have enough layers for this to be justifiable. These layers could've been anything, but we broke them down into these five categories based on the current design in our application.
+
+We could stop here and just assign every object that requires a `z-index` property to a key-value pair in our map like so:
+
+</ArticleParagraph>
+
+<CodeBlock language="scss">{`.someClass {
+  z-index: map-get($map: $zindex, $key: navigation);
+};`}</CodeBlock>
+
+<ArticleParagraph>
+  We challenged ourselves to look for ways this could be reusable, require fewer
+  changes to the original map, and be easier to read.
+</ArticleParagraph>
+</ArticleParagraphContainer>
+
+<ArticleParagraphContainer>
+<ArticleSubHeader>Using a Function To Call Your Map</ArticleSubHeader>
+
+<ArticleParagraph>
+  Our solution was using a function to pass in the desired key and an optional
+  addend if one was needed.
+</ArticleParagraph>
+
+<CodeBlock language="scss">
+  {`@function zindex($key, $addend: 0) {
+  $value: map-get($zindex, $key);
+  $new-value: $value + $addend;
+
+  @return $new-value;
+};`}
+
+</CodeBlock>
+
+<ArticleParagraph>
+What does this mean?
+
+Using the given function, we can pass in the navigation key as the first argument. Now the function is responsible for grabbing the assigned value from the map we created earlier.
+
+We've now changed our thought process of `z-index` to not be focused on numbers but keys instead. The keys represent the layers of our application and this helps us to get a better visualization of our site.
+
+If we use our map from earlier and pass `navigation` as the key, then the returned value will be 10. If we decide that a drop-down needs to go right above the navigation, we can pass in 1 as the second argument and the returned value will now be 11.
+
+</ArticleParagraph>
+
+<CodeBlock language="scss">
+  {`// Navigation Bar
+.navigation {
+  z-index: zindex(navigation);
+}
+
+// Drop Down
+.navigation-dropDown {
+  z-index: zindex(navigation, 1);
+}`}
+
+</CodeBlock>
+
+<ArticleParagraph>
+  Here is what our code progression has looked like for something like a
+  navigation bar.
+</ArticleParagraph>
+
+<CodeBlock language="scss">
+{`// Original Value
+.navigation {
+  z-index: 49;
+}
+
+// Using Map
+.navigation {
+  z-index: map-get($map: $zindex, $key: navigation);
+}
+
+// Using Function
+.navigation {
+  z-index: zindex(navigation);
+}`}
+</CodeBlock>
+
+<ArticleParagraph>
+This also works if you need to drop an element below the desired layer.
+
+Let's say that there is a slightly transparent background that needs to go below the navigation, we can pass -1 as the second argument and the returned value will now be 9.
+
+</ArticleParagraph>
+
+<CodeBlock language="scss">
+{`// Navigation Bar
+.navigation {
+  z-index: zindex(navigation);
+}
+
+// Transparent Background
+.navigation-background {
+  z-index: zindex(navigation, -1);
+}`}
+</CodeBlock>
+
+</ArticleParagraphContainer>
+
+<ArticleParagraphContainer>
+<ArticleSubHeader>Add New Layers to the Z-Index Map</ArticleSubHeader>
+
+<ArticleParagraph>
+Now let's say we needed to add the help icon mentioned in the beginning.
+
+The solution is simple, let's just add the new key-value pair to the map we created earlier on a new line where we'd like it to be placed along the z-axis.
+
+</ArticleParagraph>
+
+<CodeBlock language="scss">
+{`// Z-Index Map Original
+$zindex: (
+  "base": 0,
+  "navigation": 10,
+  "alert": 20,
+  "modal": 30,
+  "topLevel": 40,
+);
+
+// Z-Index Map w/ Help Location
+$zindex: (
+  "base": 0,
+  "navigation": 10,
+  // add help below and adjust the values that follow
+  "help": 20,
+  "alert": 30,
+  "modal": 40,
+  "topLevel": 50,
+);`}
+</CodeBlock>
+
+
+<ArticleParagraph>
+We've not only easily added a new value with a one-line change, but we've also updated every other `z-index` property that appears higher than the newly added key-value pair. All areas that use this map, directly or through the function, will now automatically be updated.
+
+Thanks for reading.
+
+</ArticleParagraph>
+</ArticleParagraphContainer>
