@@ -4,9 +4,6 @@ module.exports = {
   theme: {
     colors: {
       black: "#171717",
-      gray: {
-        50: "#808080",
-      },
       code: {
         comment: "#708090",
         function: "#DD4A68",
@@ -21,7 +18,10 @@ module.exports = {
         unknown: "#37352F",
         variable: "#EE9900",
       },
-      white: "#F2F0EF",
+      gray: {
+        50: "#707070",
+      },
+      white: "#F7F7F7",
     },
     fontFamily: {
       sans: ["Roboto", "ui-sans-serif", "system-ui"],
