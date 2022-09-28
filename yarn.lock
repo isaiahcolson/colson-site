@@ -4156,10 +4156,6 @@ vite@^3.1.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vscode-mdx@mdx-js/vscode-mdx:
-  version "1.0.3"
-  resolved "https://codeload.github.com/mdx-js/vscode-mdx/tar.gz/f716d7e6181b6e49021ab4d7ca5f9e71f729890e"
-
 webidl-conversions@^3.0.0:
   version "3.0.1"
   resolved "https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
