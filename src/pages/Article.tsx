@@ -1,12 +1,11 @@
-import React from "react";
-import FirstArticle from "../articles/001.mdx";
+import { ReactNode } from "react";
 
-function Article() {
-  return (
-    <article className="max-w-[590px] my-0 mx-auto">
-      <FirstArticle />
-    </article>
-  );
+interface Props {
+  article?: ReactNode;
+}
+
+function Article({ article }: Props) {
+  return <article className="max-w-[590px] my-0 mx-auto">{article}</article>;
 }
 
 export { Article };
