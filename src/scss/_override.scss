@@ -1,19 +1,19 @@
 body {
-  background-color: $white;
-  color: $black;
+  background-color: var(--white);
+  color: var(--black);
 }
 
 code {
-  font-family: monospace !important;
+  color: var(--indigo5);
 }
 
 p {
   code {
     border-radius: 2px;
-    color: #eb5757;
+    color: var(--gray70);
     padding: 4px;
     font-size: 14px;
-    background-color: #87837826;
+    background-color: var(--gray5);
 
     @media screen and (min-width: 768px) {
       font-size: 16px;
@@ -44,5 +44,5 @@ h2 {
 hr {
   opacity: 0.25;
   border-radius: 9999px;
-  border-top: 1px solid $black;
+  border-top: 1px solid var(--black);
 }

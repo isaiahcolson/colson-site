@@ -8,7 +8,7 @@ function Footer() {
 
   return (
     <div className="flex py-4 -m-2 items-center justify-between">
-      <p className="text-gray-50 text-xs p-2 md:text-sm">
+      <p className="text-gray-60 text-xs p-2 md:text-sm">
         &copy; {year} Isaiah Colson
       </p>
 

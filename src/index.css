@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --black: #121212;
+  --gray5: #EBEBEB;
+  --gray10: #e0e0e0;
+  --gray20: #c9c9c9;
+  --gray30: #b3b3b3;
+  --gray40: #9c9c9c;
+  --gray50: #858585;
+  --gray60: #6e6e6e;
+  --gray70: #575757;
+  --gray80: #404040;
+  --gray90: #292929;
+  --indigo5: #E7E8FD;
+  --indigo90: #1F2047;
+  --white: #F7F7F7;
+  --codeFunction: #F96E46;
+  --codeKeyword: #7FDEFF;
+  --codeNumber: #DABFFF;
+  --codePunctuation: #FFE3E3;
+  --codeString: #8DDCA4;
+  --codeVariable: #F9C846;
+}

@@ -1,147 +1,114 @@
 export const codeTheme = {
-  'code[class*="language-"]': {
-    color: "#c5c8c6",
-    textShadow: "0 1px rgba(0, 0, 0, 0.3)",
-    fontFamily:
-      "Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace",
-    direction: "ltr",
-    textAlign: "left",
-    whiteSpace: "pre",
-    wordSpacing: "normal",
-    wordBreak: "normal",
-    lineHeight: "1.5",
-    MozTabSize: "4",
-    OTabSize: "4",
-    tabSize: "4",
-    WebkitHyphens: "none",
-    MozHyphens: "none",
-    msHyphens: "none",
-    hyphens: "none",
-  },
-  'pre[class*="language-"]': {
-    color: "#c5c8c6",
-    textShadow: "0 1px rgba(0, 0, 0, 0.3)",
-    fontFamily:
-      "Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace",
-    direction: "ltr",
-    textAlign: "left",
-    whiteSpace: "pre",
-    wordSpacing: "normal",
-    wordBreak: "normal",
-    lineHeight: "1.5",
-    MozTabSize: "4",
-    OTabSize: "4",
-    tabSize: "4",
-    WebkitHyphens: "none",
-    MozHyphens: "none",
-    msHyphens: "none",
-    hyphens: "none",
-    padding: "1em",
-    margin: ".5em 0",
-    overflow: "auto",
-    borderRadius: "0.3em",
-    background: "#1d1f21",
-  },
-  ':not(pre) > code[class*="language-"]': {
-    background: "#1d1f21",
-    padding: ".1em",
-    borderRadius: ".3em",
-  },
+  // TODO
   comment: {
-    color: "#7C7C7C",
+    color: "var(--gray40)",
+    fontStyle: "italic",
   },
   prolog: {
-    color: "#7C7C7C",
+    color: "var(--gray40)",
   },
   doctype: {
-    color: "#7C7C7C",
+    color: "var(--gray40)",
   },
   cdata: {
-    color: "#7C7C7C",
+    color: "var(--gray40)",
   },
   punctuation: {
-    color: "#c5c8c6",
+    color: "var(--codePunctuation)",
   },
   ".namespace": {
     Opacity: ".7",
   },
   property: {
-    color: "#96CBFE",
+    color: "var(--codeKeyword)",
   },
   keyword: {
-    color: "#96CBFE",
+    color: "var(--codeKeyword)",
   },
   tag: {
-    color: "#96CBFE",
+    color: "var(--codeKeyword)",
   },
+  // TODO
   "class-name": {
     color: "#FFFFB6",
     textDecoration: "underline",
   },
+  // TODO
   boolean: {
     color: "#99CC99",
   },
+  // TODO
   constant: {
     color: "#99CC99",
   },
+  // TODO
   symbol: {
     color: "#f92672",
   },
+  // TODO
   deleted: {
     color: "#f92672",
   },
   number: {
-    color: "#FF73FD",
+    color: "var(--codeNumber)",
   },
   selector: {
-    color: "#A8FF60",
+    color: "var(--codeString)",
   },
   "attr-name": {
-    color: "#A8FF60",
+    color: "var(--codeString)",
   },
   string: {
-    color: "#A8FF60",
+    color: "var(--codeString)",
   },
   char: {
-    color: "#A8FF60",
+    color: "var(--codeString)",
   },
   builtin: {
-    color: "#A8FF60",
+    color: "var(--codeString)",
   },
   inserted: {
-    color: "#A8FF60",
+    color: "var(--codeString)",
   },
   variable: {
-    color: "#C6C5FE",
+    color: "var(--codeVariable)",
   },
+  // TODO
   operator: {
     color: "#EDEDED",
   },
+  // TODO
   entity: {
     color: "#FFFFB6",
     cursor: "help",
   },
   url: {
-    color: "#96CBFE",
+    color: "var(--codeKeyword)",
   },
+  // TODO
   ".language-css .token.string": {
     color: "#87C38A",
   },
+  // TODO
   ".style .token.string": {
     color: "#87C38A",
   },
+  // TODO
   atrule: {
     color: "#F9EE98",
   },
+  // TODO
   "attr-value": {
     color: "#F9EE98",
   },
   function: {
-    color: "#DAD085",
+    color: "var(--codeFunction)",
   },
+  // TODO
   regex: {
     color: "#E9C062",
   },
+  // TODO
   important: {
     color: "#fd971f",
     fontWeight: "bold",
