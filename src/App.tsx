@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Article, Articles, Home } from "./pages";
+import { Article, Articles, Home, RiveTest } from "./pages";
 import { Footer } from "./components/Footer";
 import { NavBar } from "./components/NavBar";
 import ArticleOne from "./articles/001.mdx";
@@ -19,6 +19,7 @@ function App() {
             path="articles/001"
             element={<Article article={<ArticleOne />} />}
           />
+          <Route path="poc" element={<RiveTest />} />
         </Routes>
 
         <Footer />

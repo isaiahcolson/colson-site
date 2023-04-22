@@ -857,6 +857,18 @@
   resolved "https://registry.npmjs.org/@remix-run/router/-/router-1.0.1.tgz#88d7ac31811ab0cef14aaaeae2a0474923b278bc"
   integrity sha512-eBV5rvW4dRFOU1eajN7FmYxjAIVz/mRHgUE9En9mBn6m3mulK3WTR5C3iQhL9MZ14rWAq+xOlEaCkDiW0/heOg==
 
+"@rive-app/canvas@1.1.3":
+  version "1.1.3"
+  resolved "https://ramseysolutions.jfrog.io/artifactory/api/npm/npm/@rive-app/canvas/-/canvas-1.1.3.tgz#2faf7bca2e0f906da12bbf2e01fee64fa4a6c9ee"
+  integrity sha512-Bw8qEgtEnpvjj7g83jKyq/MqX/GiBDQKHnPk42Rw3tdfknaHH5/lIK0Oa4MWlGRtKtxO62gkprNLYyxgDq5Ajw==
+
+"@rive-app/react-canvas@^3.0.45":
+  version "3.0.45"
+  resolved "https://ramseysolutions.jfrog.io/artifactory/api/npm/npm/@rive-app/react-canvas/-/react-canvas-3.0.45.tgz#4e96728d86621f635edc423aedefe69166f7be0b"
+  integrity sha512-8sPu6KfjD77MQv9pK7UOUABV3YJBISrG/FFdhVu8yqxpPeobkjCePfIm9n5iMgnQgyt104U5KCoRZQUUMVYddw==
+  dependencies:
+    "@rive-app/canvas" "1.1.3"
+
 "@rollup/pluginutils@^4.0.0":
   version "4.2.1"
   resolved "https://registry.npmjs.org/@rollup/pluginutils/-/pluginutils-4.2.1.tgz#e6c6c3aba0744edce3fb2074922d3776c0af2a6d"
