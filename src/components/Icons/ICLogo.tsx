@@ -1,5 +1,5 @@
 interface Props {
-  className: string;
+  className?: string;
 }
 
 function ICLogo({ className }: Props) {

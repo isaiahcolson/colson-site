@@ -8,7 +8,7 @@ function Home() {
       {/* bookmark section */}
       <div className="mt-24 mb-[120px] lg:mt-36 lg:mb-40">
         <div className="text-center mb-16">
-          <h1 className="text-6 font-semibold leading-normal lg:text-9">
+          <h1 className="text-6 font-font-semibold leading-normal lg:text-9">
             Bookmark
           </h1>
 
@@ -16,7 +16,7 @@ function Home() {
 
           <Link
             className="text-2 hover:underline leading-normal text-blue-50 lg:text-3"
-            to="/articles"
+            to="/bookmark"
           >
             Learn More
           </Link>
@@ -30,7 +30,7 @@ function Home() {
       {/* phone stand section */}
       <div className="bg-gray-10 py-12">
         <div className="text-center">
-          <h2 className="text-6 font-semibold leading-normal lg:text-9">
+          <h2 className="text-6 font-font-semibold leading-normal lg:text-9">
             Phone Stand
           </h2>
 
