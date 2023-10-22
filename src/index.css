@@ -3,20 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --black: #121212;
-  --gray5: #EBEBEB;
-  --gray10: #e0e0e0;
-  --gray20: #c9c9c9;
-  --gray30: #b3b3b3;
-  --gray40: #9c9c9c;
-  --gray50: #858585;
-  --gray60: #6e6e6e;
-  --gray70: #575757;
-  --gray80: #404040;
-  --gray90: #292929;
+  --black: #191A1D;
+  --blue50: #096DE7;
+  --gray5: #FCFCFC;
+  --gray10: #F4F5F6;
+  --gray20: #EBEDEF;
+  --gray30: #D2D6DA;
+  --gray40: #B0B7BF;
+  --gray50: #757F8A;
+  --gray60: #656D76;
+  --gray70: #525960;
+  --gray90: #2A2E32;
   --indigo5: #E7E8FD;
   --indigo90: #1F2047;
-  --white: #F7F7F7;
+  --white: #FFFFFF;
   --codeFunction: #F96E46;
   --codeKeyword: #7FDEFF;
   --codeNumber: #DABFFF;

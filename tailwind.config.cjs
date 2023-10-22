@@ -4,6 +4,9 @@ module.exports = {
   theme: {
     colors: {
       black: "var(--black)",
+      blue: {
+        50: "var(--blue50)",
+      },
       gray: {
         5: "var(--gray5)",
         10: "var(--gray10)",
@@ -13,7 +16,6 @@ module.exports = {
         50: "var(--gray50)",
         60: "var(--gray60)",
         70: "var(--gray70)",
-        80: "var(--gray80)",
         90: "var(--gray90)",
       },
       indigo: {
@@ -25,6 +27,17 @@ module.exports = {
       mono: ["Roboto mono, monospace"],
       sans: ["Roboto", "ui-sans-serif", "system-ui"],
       serif: ["PT Serif", "ui-serif", "Georgia"],
+    },
+    fontSize: {
+      1: "14px",
+      2: "16px",
+      3: "18px",
+      4: "20px",
+      5: "24px",
+      6: "32px",
+      7: "40px",
+      8: "48px",
+      9: "56px",
     },
   },
 };

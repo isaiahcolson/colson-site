@@ -1,18 +1,18 @@
-import React from "react";
-import youtubeIcon from "../../assets/youtube-icon.png";
-import githubIcon from "../../assets/github-icon.png";
+// import youtubeIcon from "../../assets/youtube-icon.png";
+// import githubIcon from "../../assets/github-icon.png";
 
 function Footer() {
   const date = new Date();
   const year = date.getFullYear();
 
   return (
-    <div className="flex py-4 -m-2 items-center justify-between">
-      <p className="text-gray-60 text-xs p-2 md:text-sm">
-        &copy; {year} Isaiah Colson
-      </p>
+    <div className="bg-gray-10">
+      <div className="max-w-7xl p-4 lg:p-6 my-0 mx-auto w-full">
+        <p className="text-gray-60 text-1 md:text-sm">
+          Copyright &copy; {year} Isaiah Colson All rights reserved.
+        </p>
 
-      <div className="flex">
+        {/* <div className="flex">
         <a
           className="p-2 block md:p-3"
           href="https://www.youtube.com/isaiahcolson"
@@ -36,6 +36,7 @@ function Footer() {
             src={githubIcon}
           />
         </a>
+      </div> */}
       </div>
     </div>
   );
