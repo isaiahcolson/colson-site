@@ -1,3 +1,5 @@
+import { JourneyList } from "../components/Journey";
+
 function Home() {
   return (
     <>
@@ -17,9 +19,17 @@ function Home() {
             </p>
           </section>
 
+          <section className="mb-24">
+            <p className="text-4 font-bold md:text-5 mb-6 text-center">
+              My Journey
+            </p>
+
+            <JourneyList />
+          </section>
+
           <section className="p-8 bg-gray-20 rounded-xl">
             <img className="mx-auto mb-3 md:w-10" src="/read-icon.svg" />
-            <p className="text-4 font-semibold md:text-5 mb-1 text-center">
+            <p className="text-4 font-bold md:text-5 mb-1 text-center">
               Want More?
             </p>
             <p className="md:text-4 md:text-center mb-6">
@@ -27,7 +37,7 @@ function Home() {
               Bootcamp–a UX publication from the team behind UX Collective.
             </p>
             <a
-              className="font-semibold text-blue-50 cursor-pointer border-2 px-8 py-3 rounded-xl block text-center md:text-4 md:w-fit mx-auto hover:bg-blue-5010"
+              className="font-bold text-blue-50 cursor-pointer border-4 px-8 py-3 rounded-xl block text-center md:text-4 md:w-fit mx-auto hover:bg-blue-5010"
               href="https://medium.com/@isaiahcolson"
               target="_blank"
             >

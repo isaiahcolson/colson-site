@@ -2,6 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js,tsx}"],
   theme: {
+    extend: {
+      height: {
+        92: "92%",
+      },
+    },
     colors: {
       black: "var(--black)",
       blue: {
