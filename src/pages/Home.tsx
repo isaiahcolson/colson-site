@@ -1,44 +1,39 @@
-// import { AnimatedTypography } from "../components/Animation";
-import { Link } from "react-router-dom";
-import { BookmarksHero } from "../components/Icons";
-
 function Home() {
   return (
     <>
-      {/* bookmark section */}
-      <div className="mt-24 mb-[120px] lg:mt-36 lg:mb-40">
-        <div className="text-center mb-16">
-          <h1 className="text-6 font-font-semibold leading-normal lg:text-9">
-            Bookmark
-          </h1>
+      <div className="px-4 md:px-8 my-16 md:my-24 lg:my-32">
+        <div className="max-w-2xl mx-auto">
+          <section className="mb-24">
+            <div className="text-6 font-bold leading-tight mb-2 md:text-7">
+              <span>Isaiah Colson–</span>
+              <span className="text-gray-60">
+                Product Designer at Ramsey Solutions
+              </span>
+            </div>
 
-          <p className="text-3 mb-4 lg:text-5">Your books deserve better.</p>
+            <p className="md:text-4">
+              I'm currently creating digital experiences that connect investing
+              and tax professionals with great fans.
+            </p>
+          </section>
 
-          <Link
-            className="text-2 hover:underline leading-normal text-blue-50 lg:text-3"
-            to="/bookmark"
-          >
-            Learn More
-          </Link>
-        </div>
-
-        <div className="flex justify-center">
-          <BookmarksHero className="w-auto lg:h-[760px]" />
-        </div>
-      </div>
-
-      {/* phone stand section */}
-      <div className="bg-gray-10 py-12">
-        <div className="text-center">
-          <h2 className="text-6 font-font-semibold leading-normal lg:text-9">
-            Phone Stand
-          </h2>
-
-          <p className="text-3 mb-4 lg:text-5">
-            Elevate your phone. Elevate your life.
-          </p>
-
-          <p className="text-2 text-gray-70 lg:text-3">Coming soon.</p>
+          <section className="p-8 bg-gray-20 rounded-xl">
+            <img className="mx-auto mb-3 md:w-10" src="/read-icon.svg" />
+            <p className="text-4 font-semibold md:text-5 mb-1 text-center">
+              Want More?
+            </p>
+            <p className="md:text-4 md:text-center mb-6">
+              I've written a handful of articles that have been published on
+              Bootcamp–a UX publication from the team behind UX Collective.
+            </p>
+            <a
+              className="font-semibold text-blue-50 cursor-pointer border-2 px-8 py-3 rounded-xl block text-center md:text-4 md:w-fit mx-auto hover:bg-blue-5010"
+              href="https://medium.com/@isaiahcolson"
+              target="_blank"
+            >
+              Read Now
+            </a>
+          </section>
         </div>
       </div>
     </>

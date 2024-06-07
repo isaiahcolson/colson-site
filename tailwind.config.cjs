@@ -5,7 +5,9 @@ module.exports = {
     colors: {
       black: "var(--black)",
       blue: {
+        10: "var(--blue10)",
         50: "var(--blue50)",
+        5010: "var(--blue5010)",
       },
       gray: {
         5: "var(--gray5)",

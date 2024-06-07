@@ -1,24 +1,27 @@
-body {
+html {
   background-color: var(--white);
-  color: var(--black);
+  color: var(--gray90);
 }
 
 code {
   color: var(--indigo5);
 }
 
-p {
+p,
+a {
   code {
     border-radius: 2px;
     color: var(--gray70);
     padding: 4px;
-    font-size: 14px;
     background-color: var(--gray5);
 
     @media screen and (min-width: 768px) {
-      font-size: 16px;
+      font-size: 20px;
     }
   }
+
+  font-size: 18px;
+  line-height: 1.25;
 }
 
 h1 {

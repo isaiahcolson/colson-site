@@ -9,8 +9,6 @@ import "./scss/index.scss";
 function App() {
   return (
     <>
-      <NavBar />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="articles" element={<Articles />} />
@@ -20,8 +18,6 @@ function App() {
           element={<Article article={<ArticleOne />} />}
         />
       </Routes>
-
-      <Footer />
     </>
   );
 }
