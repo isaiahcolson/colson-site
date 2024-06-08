@@ -60,7 +60,7 @@ function JourneyList() {
       />
       <JourneyItem
         date="FEB 2016"
-        imgPath="/work.svg"
+        imgPath="/briefcase.svg"
         text="Joined Christian Life Center Church as a Video Production Director"
       />
       <JourneyItem
