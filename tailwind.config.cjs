@@ -46,5 +46,11 @@ module.exports = {
       8: "48px",
       9: "56px",
     },
+    transitionDuration: {
+      400: "400ms",
+    },
+    transitionTimingFunction: {
+      easy: "cubic-bezier(0.7, 0.2, 0.25, 1)",
+    },
   },
 };

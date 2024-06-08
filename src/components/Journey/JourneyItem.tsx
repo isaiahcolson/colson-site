@@ -7,7 +7,7 @@ interface Props {
 function JourneyItem({ date, imgPath, text }: Props) {
   return (
     <div className="flex items-start gap-2 md:gap-4">
-      <img className="md:w-10 md:h-[50px]" src={imgPath} />
+      <img className="md:w-10 md:h-[50px]" src={imgPath} alt="timeline icon" />
 
       <div>
         <p className="font-bold text-1 md:text-2 text-gray-60 mb-1">{date}</p>

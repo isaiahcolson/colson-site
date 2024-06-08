@@ -4,12 +4,12 @@ function JourneyList() {
   return (
     <div className="flex flex-col gap-6 md:gap-8 relative">
       <JourneyItem
-        date="JAN 2024"
+        date="DEC 2023"
         imgPath="/expand.svg"
         text="Took on additional responsibilities as interim product leader"
       />
       <JourneyItem
-        date="OCT 2023"
+        date="JUL 2023"
         imgPath="/design.svg"
         text="Moved into a full-time Product Design role"
       />
@@ -22,6 +22,11 @@ function JourneyList() {
         date="SEPT 2022"
         imgPath="/hybrid.svg"
         text="Moved to a hybrid role as a UX engineer"
+      />
+      <JourneyItem
+        date="APR 2022"
+        imgPath="/promotion.svg"
+        text="Promoted to Software Engineer 2"
       />
       <JourneyItem
         date="OCT 2020"
