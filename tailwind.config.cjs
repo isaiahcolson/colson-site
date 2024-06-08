@@ -6,13 +6,18 @@ module.exports = {
       height: {
         92: "92%",
       },
+      transitionDuration: {
+        400: "400ms",
+      },
     },
     colors: {
       black: "var(--black)",
       blue: {
+        5: "var(--blue5)",
         10: "var(--blue10)",
         50: "var(--blue50)",
         5010: "var(--blue5010)",
+        60: "var(--blue60)",
       },
       gray: {
         5: "var(--gray5)",
@@ -46,8 +51,10 @@ module.exports = {
       8: "48px",
       9: "56px",
     },
-    transitionDuration: {
-      400: "400ms",
+    boxShadow: {
+      sm: "0 4px 6px 0px rgba(42, 46, 50, 0.1)",
+      md: "0 8px 12px 0px rgba(42, 46, 50, 0.15)",
+      lg: "0 10px 16px 0px rgba(42, 46, 50, 0.25)",
     },
     transitionTimingFunction: {
       easy: "cubic-bezier(0.7, 0.2, 0.25, 1)",

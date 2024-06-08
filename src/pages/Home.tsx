@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import {
   JourneySection,
   MoreSection,
   SkillsSection,
 } from "../components/Sections";
+import { ExampleList } from "../components/Work/ExampleList";
 
 function Home() {
   return (
@@ -24,6 +26,14 @@ function Home() {
           </section>
 
           <SkillsSection />
+
+          <section className="mb-32">
+            <p className="text-4 font-bold md:text-5 mb-6 text-center">
+              My Work
+            </p>
+
+            <ExampleList />
+          </section>
 
           <JourneySection />
 
