@@ -1,5 +1,5 @@
 <svg width="1010" height="986" viewBox="0 0 1010 986" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="1010" height="986" fill="#EBEDEF"/>
+<rect width="1010" height="986" rx="48" fill="#EBEDEF"/>
 <rect x="64" y="64" width="425" height="858" rx="64" fill="white"/>
 <mask id="mask0_767_54070" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="89" y="87" width="375" height="812">
 <rect x="89" y="87" width="375" height="812" rx="48" fill="#D9D9D9"/>

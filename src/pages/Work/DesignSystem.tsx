@@ -79,8 +79,8 @@ function DesignSystem() {
             alt="mockup of changes to contact step"
           />
           <p className="text-1 md:text-2 italic text-gray-60 leading-normal text-center">
-            Callouts of the most significant changes–most of which impacted the
-            step of the form asking for contact info.
+            Examples of the modal/dialog box that I also contributed to the
+            company's design system.
           </p>
         </div>
       </section>
