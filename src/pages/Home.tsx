@@ -28,7 +28,10 @@ function Home() {
           <SkillsSection />
 
           <section className="mb-32">
-            <p className="text-4 font-bold md:text-5 mb-6 text-center">
+            <p
+              className="text-4 font-bold md:text-5 mb-6 text-center"
+              id="workSection"
+            >
               My Work
             </p>
 

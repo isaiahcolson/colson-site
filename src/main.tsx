@@ -3,6 +3,7 @@ import { App } from "./App";
 import { initializeApp } from "firebase/app";
 import { BrowserRouter } from "react-router-dom";
 import { getAnalytics } from "firebase/analytics";
+import { ScrollToTop } from "./hooks";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAzuxugr1oTF6v2quypKbsRevV3tPMCTkc",
@@ -22,6 +23,8 @@ const container = document.getElementById("root") as HTMLElement;
 const root = createRoot(container);
 root.render(
   <BrowserRouter>
+    <ScrollToTop />
+
     <App />
   </BrowserRouter>
 );

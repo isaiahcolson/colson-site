@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Location, To } from "react-router-dom";
 
 function PricingChart() {
   return (
@@ -6,7 +6,7 @@ function PricingChart() {
       <section className="mb-12">
         <Link
           className="font-bold md:text-4 text-blue-50 flex hover:text-blue-60mb-6 mb-6"
-          to="/"
+          to="/#workSection"
         >
           <img
             className="mr-2"
@@ -61,7 +61,7 @@ function PricingChart() {
         <div className="mb-8">
           <img
             className="mb-2 w-full"
-            src="/pc-mockup-1.svg"
+            src="/pc-mockup-1.png"
             alt="mockup of phone verification"
           />
           <p className="text-1 md:text-2 italic text-gray-60 leading-normal text-center">
@@ -72,7 +72,7 @@ function PricingChart() {
         <div>
           <img
             className="mb-2 w-full"
-            src="/pc-mockup-2.svg"
+            src="/pc-mockup-2.png"
             alt="mockup of changes to contact step"
           />
           <p className="text-1 md:text-2 italic text-gray-60 leading-normal text-center">
@@ -115,7 +115,7 @@ function PricingChart() {
       <section>
         <div className="flex flex-col md:flex-row-reverse md:justify-between">
           <Link
-            to="/"
+            to="/#workSection"
             className="font-bold text-center md:text-4 bg-blue-50 text-white duration-100 px-8 py-3 rounded-xl hover:bg-blue-60 mb-4 md:mb-0"
           >
             Return Home

@@ -6,7 +6,7 @@ function DesignSystem() {
       <section className="mb-12">
         <Link
           className="font-bold md:text-4 text-blue-50 flex hover:text-blue-60mb-6 mb-6"
-          to="/"
+          to="/#workSection"
         >
           <img
             className="mr-2"
@@ -63,7 +63,7 @@ function DesignSystem() {
         <div className="mb-8">
           <img
             className="mb-2 w-full"
-            src="/ds-mockup-1.svg"
+            src="/ds-mockup-1.png"
             alt="mockup of phone verification"
           />
           <p className="text-1 md:text-2 italic text-gray-60 leading-normal text-center">
@@ -75,7 +75,7 @@ function DesignSystem() {
         <div>
           <img
             className="mb-2 w-full"
-            src="/ds-mockup-2.svg"
+            src="/ds-mockup-2.png"
             alt="mockup of changes to contact step"
           />
           <p className="text-1 md:text-2 italic text-gray-60 leading-normal text-center">
