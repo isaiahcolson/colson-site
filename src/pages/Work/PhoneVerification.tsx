@@ -79,7 +79,7 @@ function PhoneVerification() {
           />
           <p className="text-1 md:text-2 italic text-gray-60 leading-normal text-center">
             Callouts of the most significant changes–most of which impacted the
-            step of the form asking for contact info.
+            step of the form that asked for contact info.
           </p>
         </div>
       </section>

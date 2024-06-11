@@ -76,7 +76,9 @@ function SkillsSection() {
         />
 
         <button
-          className="absolute -top-6 md:-top-8 left-0 right-0 text-1 md:text-2 underline ease-in-out duration-200"
+          className={`absolute -top-6 md:-top-8 left-0 right-0 text-1 md:text-2 underline ${
+            skill === "architecture" && "no-underline"
+          }`}
           onClick={() =>
             skill === "architecture" ? setSkill("") : setSkill("architecture")
           }
@@ -84,7 +86,9 @@ function SkillsSection() {
           Architecture
         </button>
         <button
-          className="absolute top-10 md:top-16 -right-8 md:-right-7 text-1 md:text-2 underline"
+          className={`absolute top-10 md:top-16 -right-8 md:-right-7 text-1 md:text-2 underline ${
+            skill === "visual" && "no-underline"
+          }`}
           onClick={() =>
             skill === "visual" ? setSkill("") : setSkill("visual")
           }
@@ -92,7 +96,9 @@ function SkillsSection() {
           Visual
         </button>
         <button
-          className="absolute bottom-12 md:bottom-[76px] -right-12 text-1 md:text-2 underline"
+          className={`absolute bottom-12 md:bottom-[76px] -right-12 text-1 md:text-2 underline ${
+            skill === "interface" && "no-underline"
+          }`}
           onClick={() =>
             skill === "interface" ? setSkill("") : setSkill("interface")
           }
@@ -100,7 +106,9 @@ function SkillsSection() {
           Interface
         </button>
         <button
-          className="absolute left-0 right-0 text-1 md:text-2 underline"
+          className={`absolute left-0 right-0 text-1 md:text-2 underline ${
+            skill === "interaction" && "no-underline"
+          }`}
           onClick={() =>
             skill === "interaction" ? setSkill("") : setSkill("interaction")
           }
@@ -108,7 +116,9 @@ function SkillsSection() {
           Interaction
         </button>
         <button
-          className="absolute bottom-12 md:bottom-[76px] -left-12 text-1 md:text-2 underline"
+          className={`absolute bottom-12 md:bottom-[76px] -left-12 text-1 md:text-2 underline ${
+            skill === "research" && "no-underline"
+          }`}
           onClick={() =>
             skill === "research" ? setSkill("") : setSkill("research")
           }
@@ -116,7 +126,9 @@ function SkillsSection() {
           Research
         </button>
         <button
-          className="absolute top-11 md:top-[72px] -left-9 text-1 md:text-2 underline"
+          className={`absolute top-11 md:top-[72px] -left-9 text-1 md:text-2 underline ${
+            skill === "writing" && "no-underline"
+          }`}
           onClick={() =>
             skill === "writing" ? setSkill("") : setSkill("writing")
           }

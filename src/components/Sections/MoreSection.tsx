@@ -12,7 +12,7 @@ function MoreSection() {
         Bootcamp–a UX publication from the team behind UX Collective.
       </p>
       <a
-        className="font-bold text-blue-50 cursor-pointer border-4 px-8 py-3 rounded-xl block text-center md:text-4 md:w-fit mx-auto hover:bg-blue-5010"
+        className="font-bold text-white bg-blue-50 cursor-pointer px-8 py-3 rounded-xl block text-center md:text-4 md:w-fit mx-auto ease-easy duration-100 hover:bg-blue-60"
         href="https://medium.com/@isaiahcolson"
         target="_blank"
       >

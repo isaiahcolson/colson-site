@@ -22,9 +22,9 @@ function ArchitectureSkill({ className }: Props) {
       </p>
       <div className="leading-normal">
         <p className="mb-6 md:text-4 leading-normal">
-          I've not had a lot of opportunities to build on my architecture design
-          skills in the last year or so. The time that I have had has been
-          through web-based applications.
+          I haven't had a lot of opportunities to build on my architecture
+          design skills in the last year or so. The time that I have had,
+          though, has been through web-based applications.
         </p>
         <p className="md:text-4 leading-normal">
           In my time as a software engineer, I had the opportunity to work with
@@ -114,17 +114,17 @@ function ResearchSkill({ className }: Props) {
       </p>
       <div className="leading-normal">
         <p className="mb-6 md:text-4 leading-normal">
-          In product design, research is obviously one of the most important.
-          I've been blessed to have some great UX researchers to learn from in
-          my time as a product designer. I believe that has helped me to excel
-          in this area.
+          In product design, research is obviously one of the most important
+          elements. I've been blessed to have some great UX researchers to learn
+          from in my time as a product designer. I believe that's helped me to
+          excel in this area.
         </p>
         <p className="md:text-4 leading-normal">
           During my time as a product designer I've been asked to step in as the
-          interim product leader while leaders work to fill that role.
+          interim product leader while business leaders work to fill that role.
           Selfishly, this has been a great opportunity for me to grow in the
           area of research. I've been able to learn how to connect the business
-          and the customer together while leading the squad and aligning with
+          and the customer together while leading the squad to aligning with
           stakeholders.
         </p>
       </div>

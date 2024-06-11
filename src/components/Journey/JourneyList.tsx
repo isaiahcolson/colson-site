@@ -34,7 +34,7 @@ function JourneyList() {
         text="Joined Ramsey Solutions as a Software Engineer"
       />
       <JourneyItem
-        date="AUG 2020"
+        date="JUL 2020"
         imgPath="/engineer.svg"
         text="Graduated software engineering bootcamp"
       />

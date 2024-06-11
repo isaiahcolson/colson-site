@@ -15,7 +15,7 @@ function ExampleList() {
       />
       <div className="flex flex-col md:flex-row gap-4 mb-4">
         <ExampleItem
-          description="Contribute designs for various components to help build global design system."
+          description="Contributed designs for various components to help build global design system."
           imgAlt="design system mockup"
           imgSrc="/work-design-system.svg"
           route="/work/design-system"
@@ -23,7 +23,7 @@ function ExampleList() {
           title="Design System"
         />
         <ExampleItem
-          description="Redesign tax software help center to add option for users to connect with a tax pro."
+          description="Redesigned tax software help center to add option for users to connect with a tax pro."
           imgAlt="help center mockup"
           imgSrc="/work-help-center.svg"
           route="/work/help-center"
@@ -32,7 +32,7 @@ function ExampleList() {
         />
       </div>
       <ExampleItem
-        description="Redesign pricing chart for tax product to better communicate brand and ideal product choice."
+        description="Redesigned pricing chart for tax product to better communicate brand and ideal product choice."
         imgAlt="pricing chart mockup"
         imgSrc="/work-price-chart.png"
         route="/work/pricing-chart"

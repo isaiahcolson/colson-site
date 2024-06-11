@@ -28,7 +28,7 @@ function ExampleItem({
     >
       <img
         className={`mb-8 mx-auto ${
-          size === "large" ? "max-h-60 mb-0" : "max-h-40"
+          size === "large" ? "max-h-60 md:mb-0" : "max-h-40"
         }`}
         src={imgSrc}
         alt={imgAlt}
