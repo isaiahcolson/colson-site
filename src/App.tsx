@@ -8,6 +8,7 @@ import {
   HelpCenter,
   PhoneVerification,
   PricingChart,
+  TaxLeadQuality,
 } from "./pages/Work";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="articles" element={<Articles />} />
         <Route path="bookmark" element={<Bookmark />} />
+        <Route path="work/tax-lead-quality" element={<TaxLeadQuality />} />
         <Route path="work/phone-verification" element={<PhoneVerification />} />
         <Route path="work/design-system" element={<DesignSystem />} />
         <Route path="work/help-center" element={<HelpCenter />} />

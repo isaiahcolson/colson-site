@@ -5,15 +5,24 @@ function ExampleList() {
     <>
       <ExampleItem
         className="mb-4"
-        description="Reduced rate of leads with bogus contact info while also
-                improving conversion rate."
-        imgAlt="phone verification mockup"
-        imgSrc="/work-phone-verification.png"
-        route="/work/phone-verification"
+        description="Improved the quality of leads going to tax pros by redirecting users that are non-target market."
+        imgAlt="tax lead quality mockup"
+        imgSrc="/work-tax-lead-quality.png"
+        route="/work/tax-lead-quality"
         size="large"
-        title="Phone Verification"
+        title="Tax Lead Quality"
       />
-      <div className="flex flex-col md:flex-row gap-4 mb-4">
+
+      <div className="flex flex-col md:grid md:grid-cols-2 gap-4 mb-4">
+        <ExampleItem
+          description="Reduced rate of leads with bogus contact info while also
+                improving conversion rate."
+          imgAlt="phone verification mockup"
+          imgSrc="/work-phone-verification.png"
+          route="/work/phone-verification"
+          size="small"
+          title="Phone Verification"
+        />
         <ExampleItem
           description="Contributed designs for various components to help build global design system."
           imgAlt="design system mockup"
@@ -30,15 +39,15 @@ function ExampleList() {
           size="small"
           title="Help Center"
         />
+        <ExampleItem
+          description="Redesigned pricing chart for tax product to better communicate brand and ideal product choice."
+          imgAlt="pricing chart mockup"
+          imgSrc="/work-price-chart.png"
+          route="/work/pricing-chart"
+          size="small"
+          title="Pricing Chart"
+        />
       </div>
-      <ExampleItem
-        description="Redesigned pricing chart for tax product to better communicate brand and ideal product choice."
-        imgAlt="pricing chart mockup"
-        imgSrc="/work-price-chart.png"
-        route="/work/pricing-chart"
-        size="large"
-        title="Pricing Chart"
-      />
     </>
   );
 }
