@@ -26,7 +26,7 @@ function DesignSystem() {
 
       <section className="mb-16">
         <div className="mb-6">
-          <p className="font-bold md:text-4 mb-1">Outcome</p>
+          <p className="font-bold md:text-4 mb-1">Opportunity</p>
           <p className="md:text-4 leading-normal">
             The Design System team at Ramsey Solutions was expanding their
             library of components and needed contributions from designers.

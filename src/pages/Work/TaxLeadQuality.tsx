@@ -26,7 +26,7 @@ function TaxLeadQuality() {
 
       <section className="mb-16">
         <div className="mb-6">
-          <p className="font-bold md:text-4 mb-1">Outcome</p>
+          <p className="font-bold md:text-4 mb-1">Opportunity</p>
           <p className="md:text-4 leading-normal">
             Our team learned from our tax pros that they're receiving too many
             leads during tax season, many of which the pros considered as low
@@ -65,8 +65,41 @@ function TaxLeadQuality() {
 
       <section className="mb-16">
         <div className="mb-8">
+          <img
+            className="mb-2 w-full"
+            src="/tlq-mockup-1.png"
+            alt="mockup of phone verification"
+          />
+
           <p className="text-1 md:text-2 italic text-gray-60 leading-normal text-center">
-            Images coming soon.
+            User flow of the lead form before and after addressing this
+            opportunity with highlights of some new additions.
+          </p>
+        </div>
+
+        <div className="mb-8">
+          <img
+            className="mb-2 w-full"
+            src="/tlq-mockup-2.png"
+            alt="mockup of phone verification"
+          />
+          <p className="text-1 md:text-2 italic text-gray-60 leading-normal text-center">
+            Mockups of the two steps we added to help provide resources to users
+            that were just asking a question or only looking for advice.
+          </p>
+        </div>
+
+        <div>
+          <img
+            className="mb-2 w-full"
+            src="/tlq-mockup-3.png"
+            alt="mockup of changes to contact step"
+          />
+          <p className="text-1 md:text-2 italic text-gray-60 leading-normal text-center">
+            Mockups of two steps with lovability through user-generated content
+            as well as pricing info for users who are deciding whether they need
+            a tax pro or not. Note: these images have been changed due to
+            restrictions of what I can and cannot show.
           </p>
         </div>
       </section>

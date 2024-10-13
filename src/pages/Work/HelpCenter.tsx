@@ -26,7 +26,7 @@ function HelpCenter() {
 
       <section className="mb-16">
         <div className="mb-6">
-          <p className="font-bold md:text-4 mb-1">Outcome</p>
+          <p className="font-bold md:text-4 mb-1">Opportunity</p>
           <p className="md:text-4 leading-normal">
             The customer service team behind the Ramsey SmartTax product had
             been getting a lot of tickets and requests for professional help

@@ -26,10 +26,10 @@ function PricingChart() {
 
       <section className="mb-16">
         <div className="mb-6">
-          <p className="font-bold md:text-4 mb-1">Outcome</p>
+          <p className="font-bold md:text-4 mb-1">Opportunity</p>
           <p className="md:text-4 leading-normal">
             The offerings for each of the pricing options in the Ramsey tax
-            software had changed.
+            software had changed and needed to be updated.
           </p>
         </div>
 

@@ -26,7 +26,7 @@ function PhoneVerification() {
 
       <section className="mb-16">
         <div className="mb-6">
-          <p className="font-bold md:text-4 mb-1">Outcome</p>
+          <p className="font-bold md:text-4 mb-1">Opportunity</p>
           <p className="md:text-4 leading-normal">
             Our team learned from our investing pros that there was a high rate
             of leads with bogus contact info.
