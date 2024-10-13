@@ -5,7 +5,7 @@ function ExampleList() {
     <>
       <ExampleItem
         className="mb-4"
-        description="Improved the quality of leads going to tax pros by redirecting users that are non-target market."
+        description="Improved quality of leads going to tax pros by redirecting users that are non-target market."
         imgAlt="tax lead quality mockup"
         imgSrc="/work-tax-lead-quality.png"
         route="/work/tax-lead-quality"
@@ -40,7 +40,7 @@ function ExampleList() {
           title="Help Center"
         />
         <ExampleItem
-          description="Redesigned pricing chart for tax product to better communicate brand and ideal product choice."
+          description="Redesigned pricing chart for tax-filing software to highlight recommendedation."
           imgAlt="pricing chart mockup"
           imgSrc="/work-price-chart.png"
           route="/work/pricing-chart"

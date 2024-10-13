@@ -120,10 +120,10 @@ function PhoneVerification() {
           </Link>
 
           <Link
-            to="/#workSection"
+            to="/work/tax-lead-quality"
             className="font-bold text-center md:text-4 text-blue-50 duration-100 px-8 py-3 rounded-xl hover:bg-blue-5 hover:text-blue-60"
           >
-            Return Home
+            Previous Project
           </Link>
         </div>
       </section>
