@@ -21,7 +21,7 @@ function ExampleItem({
 }: Props) {
   return (
     <Link
-      className={`bg-blue-5 block p-8 rounded-[32px] shadow-sm hover:shadow-md duration-150 ${
+      className={`bg-violet-900 block p-8 rounded-[24px] border-2 border-solid border-gray-700 hover:border-violet-400 hover:bg-gray-800 duration-200 ${
         size === "large" && "md:flex md:items-center"
       } ${className}`}
       to={route}
@@ -39,7 +39,7 @@ function ExampleItem({
 
         <p className="md:text-4 text-center mb-8">{description}</p>
 
-        <p className="font-bold md:text-4 text-blue-50 duration-100 px-8 py-3 rounded-xl hover:bg-blue-10 hover:text-blue-60 w-fit mx-auto">
+        <p className="font-bold md:text-4 text-violet-400 duration-200 px-8 py-3 rounded-xl hover:bg-[#C677FF1a] w-fit mx-auto">
           Learn More
         </p>
       </div>

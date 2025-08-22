@@ -5,11 +5,11 @@ function DesignSystem() {
     <div className="mx-4 my-16 max-w-2xl md:mx-auto">
       <section className="mb-12">
         <Link
-          className="font-bold md:text-4 text-blue-50 flex hover:text-blue-60mb-6 mb-6"
+          className="font-bold md:text-4 text-violet-400 flex mb-6"
           to="/#workSection"
         >
           <img
-            className="mr-2"
+            className="mr-2 fill-violet-400"
             src="/chevron-left.svg"
             alt="chevron left icon"
           />
@@ -129,14 +129,14 @@ function DesignSystem() {
         <div className="flex flex-col md:flex-row-reverse md:justify-between">
           <Link
             to="/work/help-center"
-            className="font-bold text-center md:text-4 bg-blue-50 text-white duration-100 px-8 py-3 rounded-xl hover:bg-blue-60 mb-4 md:mb-0"
+            className="font-bold text-center md:text-4 bg-violet-400 text-gray-900 duration-200 px-8 py-3 rounded-xl hover:bg-violet-300 mb-4 md:mb-0"
           >
             Next Project
           </Link>
 
           <Link
             to="/work/phone-verification"
-            className="font-bold text-center md:text-4 text-blue-50 duration-100 px-8 py-3 rounded-xl hover:bg-blue-5 hover:text-blue-60"
+            className="font-bold text-center md:text-4 text-violet-400 duration-200 px-8 py-3 rounded-xl hover:bg-[#C677FF1a]"
           >
             Previous Project
           </Link>
