@@ -10,6 +10,7 @@ import {
   PricingChart,
   TaxLeadQuality,
 } from "./pages/Work";
+import { Rive002 } from "./articles/Rive002";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
         <Route
           path="articles/001"
           element={<Article article={<ArticleOne />} />}
+        />
+        <Route
+          path="articles/rive002"
+          element={<Article article={<Rive002 />} />}
         />
       </Routes>
     </>

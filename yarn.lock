@@ -896,6 +896,18 @@
   dependencies:
     "@rive-app/canvas" "1.2.4"
 
+"@rive-app/react-webgl2@^4.27.2":
+  version "4.27.2"
+  resolved "https://registry.yarnpkg.com/@rive-app/react-webgl2/-/react-webgl2-4.27.2.tgz#02ed04de6f5222c6256536428d860ec93b4f6dc7"
+  integrity sha512-zGUmD5yDDw1LbN8nc6WG4NsGLb6/ngzkS6sYqaWQbpDSKxBX5hgmmkejBCjMzMqiwju82KhXlS1XA9fZWI7F9A==
+  dependencies:
+    "@rive-app/webgl2" "2.35.3"
+
+"@rive-app/webgl2@2.35.3":
+  version "2.35.3"
+  resolved "https://registry.yarnpkg.com/@rive-app/webgl2/-/webgl2-2.35.3.tgz#9fa60fcbd264667827918cad09280587d6eaa308"
+  integrity sha512-gsiP030uKLCTXoma5kJ7OG7Fpjwqx63RpFxc5/wFEvSuEHdTgOYOmIa6/MEXbC3obxnp8TJIj1XMKRYIpJHD7w==
+
 "@rollup/pluginutils@^5.0.0":
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-5.1.0.tgz#7e53eddc8c7f483a4ad0b94afb1f7f5fd3c771e0"
