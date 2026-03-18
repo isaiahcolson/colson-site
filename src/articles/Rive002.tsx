@@ -37,13 +37,11 @@ function Rive002() {
     boundInstance,
   );
 
-  setTitle("Is this the best porfolio you've seen?");
-  setDescription(
-    "Take time to review as much as you can to provide the answer I'm looking for.",
-  );
-  setPrimaryButtonText("Absolutely");
-  setSecondaryButtonText("Pretty Much");
-  setPrimaryButtonColor(198, 119, 255);
+  setTitle("Delete file?");
+  setDescription("This action cannot be undone.");
+  setPrimaryButtonText("Delete");
+  setSecondaryButtonText("Cancel");
+  setPrimaryButtonColor(220, 34, 31);
 
   return (
     <div className="w-[500px] h-[500px]">
