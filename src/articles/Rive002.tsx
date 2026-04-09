@@ -39,7 +39,7 @@ function Rive002() {
 
   setTitle("Delete file?");
   setDescription("This action cannot be undone.");
-  setPrimaryButtonText("Delete");
+  setPrimaryButtonText("Do It");
   setSecondaryButtonText("Cancel");
   setPrimaryButtonColor(220, 34, 31);
 

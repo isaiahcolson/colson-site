@@ -11,6 +11,8 @@ import {
   TaxLeadQuality,
 } from "./pages/Work";
 import { Rive002 } from "./articles/Rive002";
+import { Rive006 } from "./articles/Rive006";
+import { RiveFaces } from "./articles/RiveFaces";
 
 function App() {
   return (
@@ -32,6 +34,11 @@ function App() {
           path="articles/rive002"
           element={<Article article={<Rive002 />} />}
         />
+        <Route
+          path="articles/rive006"
+          element={<Article article={<Rive006 />} />}
+        />
+        <Route path="articles/rive-faces" element={<RiveFaces />} />
       </Routes>
     </>
   );
