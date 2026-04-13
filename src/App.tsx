@@ -13,6 +13,7 @@ import {
 import { Rive002 } from "./articles/Rive002";
 import { Rive006 } from "./articles/Rive006";
 import { RiveFaces } from "./articles/RiveFaces";
+import { RockMeter } from "./Rive";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           element={<Article article={<Rive006 />} />}
         />
         <Route path="articles/rive-faces" element={<RiveFaces />} />
+        <Route path="prototypes/rock-meter" element={<RockMeter />} />
       </Routes>
     </>
   );
