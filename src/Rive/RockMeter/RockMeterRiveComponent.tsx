@@ -10,11 +10,12 @@ import {
 
 interface Props {
   boltLevel: number;
+  rockLevel: number;
 }
 
-function LightningBoltGroup({ boltLevel }: Props) {
+function RockMeterRiveComponent({ boltLevel, rockLevel }: Props) {
   const { rive, RiveComponent } = useRive({
-    src: "../rock_meter_lightning_bolt_test.riv",
+    src: "../rock_meter.riv",
     stateMachines: "State Machine 1",
     autoBind: true,
     autoplay: true,
@@ -24,27 +25,33 @@ function LightningBoltGroup({ boltLevel }: Props) {
     }),
   });
 
-  const dialogViewModel = useViewModel(rive, { name: "ViewModel1" });
+  const dialogViewModel = useViewModel(rive, { name: "Main" });
   const boundInstance = rive?.viewModelInstance;
 
   const { setValue: setBoltLevel } = useViewModelInstanceNumber(
     "boltLevel",
     boundInstance,
   );
+  const { setValue: setRockLevel } = useViewModelInstanceNumber(
+    "rockLevel",
+    boundInstance,
+  );
 
   useEffect(() => {
     if (!boundInstance) return;
-    console.log("sending to rive:", boltLevel); // 👈 here
+    console.log("bolt level:", boltLevel); // 👈 here
+    console.log("rock level:", rockLevel); // 👈 here
     setBoltLevel(boltLevel);
-  }, [boltLevel, boundInstance]);
+    setRockLevel(rockLevel);
+  }, [boltLevel, boundInstance, rockLevel]);
 
   return (
     <div className="w-screen h-screen bg-[#1D1C20] flex justify-center items-center">
-      <div className="w-[375px] h-[840px]">
+      <div className="w-[375px] h-[640px]">
         <RiveComponent className="h-full w-full" />
       </div>
     </div>
   );
 }
 
-export { LightningBoltGroup };
+export { RockMeterRiveComponent };

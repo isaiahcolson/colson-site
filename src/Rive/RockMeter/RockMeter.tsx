@@ -1,8 +1,21 @@
-import { useEffect, useState } from "react";
-import { LightningBoltGroup } from "./LightningBoltGroup";
+import { useEffect, useRef, useState } from "react";
+import { RockMeterRiveComponent } from "./RockMeterRiveComponent";
 
 function RockMeter() {
-  const [dbLevel, setDbLevel] = useState(0);
+  const [boltLevel, setBoltLevel] = useState(0);
+  const [rockLevel, setRockLevel] = useState(0);
+
+  const THRESHOLD = 2; // when rock starts building
+  const GROWTH_RATE = 3; // units per second
+  const DECAY_RATE = 6; // units per second
+  const MAX = 100;
+  const MIN = 0;
+
+  const boltLevelRef = useRef(0);
+
+  useEffect(() => {
+    boltLevelRef.current = boltLevel;
+  }, [boltLevel]);
 
   useEffect(() => {
     let animationId = 0;
@@ -19,16 +32,13 @@ function RockMeter() {
 
       const samples = new Uint8Array(analyser.fftSize);
 
-      let smoothedLevel = 0; // keeps things from jumping
-
-      // 👇 throttle control
+      let smoothedLevel = 0;
       let lastUpdate = 0;
-      const throttleMs = 200; // update every 100ms (~10 fps)
+      const throttleMs = 200;
 
       function loop() {
         analyser.getByteTimeDomainData(samples);
 
-        // 1. Convert waveform → signal strength (RMS)
         let sumOfSquares = 0;
         for (let i = 0; i < samples.length; i++) {
           const normalized = (samples[i] - 128) / 128;
@@ -36,28 +46,44 @@ function RockMeter() {
         }
 
         const rms = Math.sqrt(sumOfSquares / samples.length);
-        // 2. Scale it (this is your "sensitivity control")
         const boosted = rms * 5;
-        // 3. Clamp to 0–1
         const level01 = Math.min(Math.max(boosted, 0), 1);
 
-        // 4. Smooth it (prevents jitter)
         smoothedLevel = smoothedLevel * 0.8 + level01 * 0.2;
 
-        // 5. Convert to 0–10 steps for your icons
         const stepped = Math.round(smoothedLevel * 10);
 
         const now = Date.now();
-
         if (now - lastUpdate > throttleMs) {
-          console.log("stepped:", stepped); // ✅ log THIS instead
-          setDbLevel(stepped);
+          setBoltLevel(stepped);
           lastUpdate = now;
         }
 
         animationId = requestAnimationFrame(loop);
       }
 
+      let lastTime = performance.now();
+
+      function update(now: number) {
+        const delta = (now - lastTime) / 1000;
+        lastTime = now;
+
+        setRockLevel((prev) => {
+          let next = prev;
+
+          if (boltLevelRef.current >= THRESHOLD) {
+            next += GROWTH_RATE * delta;
+          } else {
+            next -= DECAY_RATE * delta;
+          }
+
+          return Math.max(MIN, Math.min(MAX, next));
+        });
+
+        requestAnimationFrame(update);
+      }
+
+      requestAnimationFrame(update);
       loop();
     }
 
@@ -68,7 +94,7 @@ function RockMeter() {
 
   return (
     <div>
-      <LightningBoltGroup boltLevel={dbLevel} />
+      <RockMeterRiveComponent boltLevel={boltLevel} rockLevel={rockLevel} />
     </div>
   );
 }
