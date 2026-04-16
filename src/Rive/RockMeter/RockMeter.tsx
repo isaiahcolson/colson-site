@@ -4,6 +4,7 @@ import { RockMeterRiveComponent } from "./RockMeterRiveComponent";
 function RockMeter() {
   const [boltLevel, setBoltLevel] = useState(0);
   const [rockLevel, setRockLevel] = useState(0);
+  const [rockTrajectory, setRockTrajectory] = useState("idle");
 
   const THRESHOLD = 2; // when rock starts building
   const GROWTH_RATE = 3; // units per second
@@ -12,6 +13,7 @@ function RockMeter() {
   const MIN = 0;
 
   const boltLevelRef = useRef(0);
+  const prevRockTrajectoryRef = useRef(0);
 
   useEffect(() => {
     boltLevelRef.current = boltLevel;
@@ -92,9 +94,33 @@ function RockMeter() {
     return () => cancelAnimationFrame(animationId);
   }, []);
 
+  useEffect(() => {
+    const prev = prevRockTrajectoryRef.current;
+
+    let nextState = "idle";
+
+    if (rockLevel === 0) {
+      nextState = "idle";
+    } else if (rockLevel === 100) {
+      nextState = "max";
+    } else if (rockLevel > prev) {
+      nextState = "growth";
+    } else if (rockLevel < prev) {
+      nextState = "decay";
+    }
+
+    setRockTrajectory(nextState);
+
+    prevRockTrajectoryRef.current = rockLevel;
+  }, [rockLevel]);
+
   return (
     <div>
-      <RockMeterRiveComponent boltLevel={boltLevel} rockLevel={rockLevel} />
+      <RockMeterRiveComponent
+        boltLevel={boltLevel}
+        rockLevel={rockLevel}
+        rockTrajectory={rockTrajectory}
+      />
     </div>
   );
 }
