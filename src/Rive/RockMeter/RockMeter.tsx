@@ -4,27 +4,50 @@ import { RockMeterRiveComponent } from "./RockMeterRiveComponent";
 function RockMeter() {
   const [boltLevel, setBoltLevel] = useState(0);
   const [rockLevel, setRockLevel] = useState(0);
-  const [rockTrajectory, setRockTrajectory] = useState("idle");
+  const [threshold, setThreshold] = useState(7);
+  console.log(rockLevel);
 
-  const THRESHOLD = 2; // when rock starts building
   const GROWTH_RATE = 3; // units per second
   const DECAY_RATE = 6; // units per second
   const MAX = 100;
   const MIN = 0;
 
   const boltLevelRef = useRef(0);
-  const prevRockTrajectoryRef = useRef(0);
+  const thresholdRef = useRef(threshold);
+
+  function getBoltLevel(db: number) {
+    if (db <= 0) return 0;
+    if (db <= 1) return 1;
+    if (db <= 3) return 2;
+    if (db <= 6) return 3;
+    if (db <= 11) return 4;
+    if (db <= 17) return 5;
+    if (db <= 24) return 6;
+    if (db <= 32) return 7;
+    if (db <= 41) return 8;
+    if (db <= 51) return 9;
+    return 10;
+  }
 
   useEffect(() => {
     boltLevelRef.current = boltLevel;
   }, [boltLevel]);
 
   useEffect(() => {
+    thresholdRef.current = threshold;
+  }, [threshold]);
+
+  useEffect(() => {
     let animationId = 0;
 
     async function start() {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          autoGainControl: false,
+          noiseSuppression: false,
+          echoCancellation: false,
+        },
+      });
       const audioContext = new AudioContext();
       const analyser = audioContext.createAnalyser();
       const source = audioContext.createMediaStreamSource(stream);
@@ -48,18 +71,35 @@ function RockMeter() {
         }
 
         const rms = Math.sqrt(sumOfSquares / samples.length);
-        const boosted = rms * 5;
-        const level01 = Math.min(Math.max(boosted, 0), 1);
+        const NOISE_FLOOR = 0.01;
 
-        smoothedLevel = smoothedLevel * 0.8 + level01 * 0.2;
+        const adjustedRms = rms < NOISE_FLOOR ? 0 : rms;
 
-        const stepped = Math.round(smoothedLevel * 10);
+        // 1. Convert to "db-like"
+        const db = 20 * Math.log10(adjustedRms || 0.0001);
+
+        // 2. Normalize to 0–60 range
+        const normalizedDb = Math.min(Math.max(db + 60, 0), 60);
+
+        // 3. Apply curve (this is the "hockey stick")
+        const curvedDb = Math.pow(normalizedDb / 60, 1.5) * 60;
+
+        // 4. Smooth it
+        smoothedLevel = smoothedLevel * 0.8 + curvedDb * 0.2;
+
+        // 5. Snap very low values to 0
+        if (smoothedLevel < 1) smoothedLevel = 0;
+
+        // 6. Map to bolt levels
+        const stepped = getBoltLevel(smoothedLevel);
 
         const now = Date.now();
         if (now - lastUpdate > throttleMs) {
           setBoltLevel(stepped);
           lastUpdate = now;
         }
+
+        console.log("threshold in loop:", thresholdRef.current);
 
         animationId = requestAnimationFrame(loop);
       }
@@ -73,7 +113,7 @@ function RockMeter() {
         setRockLevel((prev) => {
           let next = prev;
 
-          if (boltLevelRef.current >= THRESHOLD) {
+          if (boltLevelRef.current >= thresholdRef.current) {
             next += GROWTH_RATE * delta;
           } else {
             next -= DECAY_RATE * delta;
@@ -94,32 +134,12 @@ function RockMeter() {
     return () => cancelAnimationFrame(animationId);
   }, []);
 
-  useEffect(() => {
-    const prev = prevRockTrajectoryRef.current;
-
-    let nextState = "idle";
-
-    if (rockLevel === 0) {
-      nextState = "idle";
-    } else if (rockLevel === 100) {
-      nextState = "max";
-    } else if (rockLevel > prev) {
-      nextState = "growth";
-    } else if (rockLevel < prev) {
-      nextState = "decay";
-    }
-
-    setRockTrajectory(nextState);
-
-    prevRockTrajectoryRef.current = rockLevel;
-  }, [rockLevel]);
-
   return (
     <div>
       <RockMeterRiveComponent
         boltLevel={boltLevel}
         rockLevel={rockLevel}
-        rockTrajectory={rockTrajectory}
+        onThresholdChange={setThreshold}
       />
     </div>
   );
