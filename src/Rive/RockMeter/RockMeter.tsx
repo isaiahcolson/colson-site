@@ -9,7 +9,7 @@ function RockMeter() {
 
   const GROWTH_RATE = 3; // units per second
   const DECAY_RATE = 6; // units per second
-  const MAX = 100;
+  const MAX = 101;
   const MIN = 0;
 
   const boltLevelRef = useRef(0);
