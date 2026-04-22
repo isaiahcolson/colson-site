@@ -5,6 +5,7 @@ function RockMeter() {
   const [boltLevel, setBoltLevel] = useState(0);
   const [rockLevel, setRockLevel] = useState(0);
   const [threshold, setThreshold] = useState(7);
+  const [rockMeterInitiated, setRockMeterInitiated] = useState(false);
   console.log(rockLevel);
 
   const GROWTH_RATE = 3; // units per second
@@ -36,6 +37,12 @@ function RockMeter() {
   useEffect(() => {
     thresholdRef.current = threshold;
   }, [threshold]);
+
+  useEffect(() => {
+    if (!rockMeterInitiated && rockLevel >= 1) {
+      setRockMeterInitiated(true);
+    }
+  }, [rockLevel, rockMeterInitiated]);
 
   useEffect(() => {
     let animationId = 0;
@@ -134,12 +141,15 @@ function RockMeter() {
     return () => cancelAnimationFrame(animationId);
   }, []);
 
+  console.log(rockMeterInitiated);
+
   return (
     <div>
       <RockMeterRiveComponent
         boltLevel={boltLevel}
         rockLevel={rockLevel}
         onThresholdChange={setThreshold}
+        rockMeterInitated={rockMeterInitiated}
       />
     </div>
   );

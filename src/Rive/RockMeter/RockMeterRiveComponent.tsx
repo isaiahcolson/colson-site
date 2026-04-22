@@ -5,6 +5,7 @@ import {
   Layout,
   useRive,
   useViewModel,
+  useViewModelInstanceBoolean,
   useViewModelInstanceNumber,
 } from "@rive-app/react-webgl2";
 
@@ -12,12 +13,14 @@ interface Props {
   boltLevel: number;
   rockLevel: number;
   onThresholdChange: (value: number) => void;
+  rockMeterInitated: boolean;
 }
 
 function RockMeterRiveComponent({
   boltLevel,
   rockLevel,
   onThresholdChange,
+  rockMeterInitated,
 }: Props) {
   const { rive, RiveComponent } = useRive({
     src: "../rock_meter.riv",
@@ -45,6 +48,10 @@ function RockMeterRiveComponent({
     "threshold",
     boundInstance,
   );
+  const { setValue: setRockMeterInitatedValue } = useViewModelInstanceBoolean(
+    "rockMeterInitiated",
+    boundInstance,
+  );
 
   useEffect(() => {
     if (thresholdValue == null) return;
@@ -55,7 +62,8 @@ function RockMeterRiveComponent({
     if (!boundInstance) return;
     setBoltLevel(boltLevel);
     setRockLevel(rockLevel);
-  }, [boltLevel, boundInstance, rockLevel]);
+    setRockMeterInitatedValue(rockMeterInitated);
+  }, [boltLevel, boundInstance, rockLevel, rockMeterInitated]);
 
   return (
     <div className="w-screen h-screen bg-[#1D1C20] flex justify-center items-center">
