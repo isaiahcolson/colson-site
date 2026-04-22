@@ -6,7 +6,7 @@ function RockMeter() {
   const [rockLevel, setRockLevel] = useState(0);
   const [threshold, setThreshold] = useState(7);
   const [rockMeterInitiated, setRockMeterInitiated] = useState(false);
-  console.log(rockLevel);
+  const [transitionTick, setTransitionTick] = useState(0);
 
   const GROWTH_RATE = 3; // units per second
   const DECAY_RATE = 6; // units per second
@@ -15,6 +15,8 @@ function RockMeter() {
 
   const boltLevelRef = useRef(0);
   const thresholdRef = useRef(threshold);
+  const prevRockLevelRef = useRef(0);
+  const isReadyRef = useRef(false);
 
   function getBoltLevel(db: number) {
     if (db <= 0) return 0;
@@ -43,6 +45,29 @@ function RockMeter() {
       setRockMeterInitiated(true);
     }
   }, [rockLevel, rockMeterInitiated]);
+
+  useEffect(() => {
+    if (!isReadyRef.current) {
+      isReadyRef.current = true;
+      prevRockLevelRef.current = rockLevel;
+      return;
+    }
+
+    const prev = prevRockLevelRef.current;
+    const curr = rockLevel;
+
+    prevRockLevelRef.current = curr;
+
+    const thresholds = [20, 40, 60, 80];
+
+    const crossed = thresholds.some(
+      (t) => (prev < t && curr >= t) || (prev > t && curr <= t),
+    );
+
+    if (crossed) {
+      setTransitionTick((t) => t + 1);
+    }
+  }, [rockLevel]);
 
   useEffect(() => {
     let animationId = 0;
@@ -106,8 +131,6 @@ function RockMeter() {
           lastUpdate = now;
         }
 
-        console.log("threshold in loop:", thresholdRef.current);
-
         animationId = requestAnimationFrame(loop);
       }
 
@@ -141,14 +164,13 @@ function RockMeter() {
     return () => cancelAnimationFrame(animationId);
   }, []);
 
-  console.log(rockMeterInitiated);
-
   return (
     <div>
       <RockMeterRiveComponent
         boltLevel={boltLevel}
         rockLevel={rockLevel}
         onThresholdChange={setThreshold}
+        transitionTick={transitionTick}
         rockMeterInitated={rockMeterInitiated}
       />
     </div>

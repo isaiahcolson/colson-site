@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import {
   Alignment,
   Fit,
@@ -7,6 +7,7 @@ import {
   useViewModel,
   useViewModelInstanceBoolean,
   useViewModelInstanceNumber,
+  useViewModelInstanceTrigger,
 } from "@rive-app/react-webgl2";
 
 interface Props {
@@ -14,6 +15,7 @@ interface Props {
   rockLevel: number;
   onThresholdChange: (value: number) => void;
   rockMeterInitated: boolean;
+  transitionTick: number;
 }
 
 function RockMeterRiveComponent({
@@ -21,6 +23,7 @@ function RockMeterRiveComponent({
   rockLevel,
   onThresholdChange,
   rockMeterInitated,
+  transitionTick,
 }: Props) {
   const { rive, RiveComponent } = useRive({
     src: "../rock_meter.riv",
@@ -53,17 +56,36 @@ function RockMeterRiveComponent({
     boundInstance,
   );
 
+  const { trigger } = useViewModelInstanceTrigger(
+    "channelChange",
+    boundInstance,
+  );
+
   useEffect(() => {
     if (thresholdValue == null) return;
     onThresholdChange(thresholdValue);
-  }, [thresholdValue]);
+  }, [thresholdValue, onThresholdChange]);
 
   useEffect(() => {
     if (!boundInstance) return;
     setBoltLevel(boltLevel);
     setRockLevel(rockLevel);
     setRockMeterInitatedValue(rockMeterInitated);
-  }, [boltLevel, boundInstance, rockLevel, rockMeterInitated]);
+  }, [
+    boltLevel,
+    rockLevel,
+    rockMeterInitated,
+    boundInstance,
+    setBoltLevel,
+    setRockLevel,
+    setRockMeterInitatedValue,
+  ]);
+
+  useEffect(() => {
+    if (!trigger) return;
+    if (!transitionTick) return; // optional extra guard
+    trigger();
+  }, [transitionTick, trigger]);
 
   return (
     <div className="w-screen h-screen bg-[#1D1C20] flex justify-center items-center">
